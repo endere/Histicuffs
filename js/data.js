@@ -24,6 +24,8 @@ var teddyQ11 = ['Teddy Roosevelt was:', 'The youngest person to ever be sworn in
 
 var teddyQ12 = ['Which of the following was the name of one of Teddy Roosevelt\'s sons?', 'Adolf', 'Hubert', 'Kermit', 'Percivall'];
 
+////
+
 var teddy = ['Teddy Roosevelt', 'img/Teddy.jpg', teddyQ1, teddyQ2, teddyQ3, teddyQ4, teddyQ5, teddyQ6, teddyQ7, teddyQ8, teddyQ9, teddyQ10, teddyQ11, teddyQ12];
 // Teddy Roosevelt Above!
 ///
@@ -57,12 +59,34 @@ var daVinciQ11 = ['About what age was Leonardo when he began his apprenticeship'
 
 var daVinciQ12 = ['What is the Mona Lisa called in Italian?', 'La Gioconda', 'La Mona lisa', 'La Mona Bella', 'La Benois Lisa'];
 
-//
-//ADD questions for daVinci var before this daVinci Var
-
 var daVinci = ['Leonardo Da Vinci','img/leonardo-da-vinci.jpg', daVinciQ1, daVinciQ2, daVinciQ3, daVinciQ4, daVinciQ5, daVinciQ6, daVinciQ7, daVinciQ8, daVinciQ9, daVinciQ10, daVinciQ11, daVinciQ12];
 
+// Leonardo Da Vinci Above!
 //
 //
 //
-//
+var ghandiQ1 = ['In what year was Ghandi born?', '1869', '1789', '1830', '1902'];
+
+var ghandiQ2 = ['How did Ghandi die?', 'Assassination', 'Old Age', 'Heart Attack', 'Starvation'];
+
+var ghandiQ3 = ['What was Ghandi famous for?', 'Leader of the Indian Idependence Movement', 'Famous Chef', 'Famous Guru', 'Famous Taibo Instructor'];
+
+var ghandiQ4 = ['At which one of the 4 Inns of Court did Ghandi study law?', 'The Honorable Society of Inner Temple', 'The Honorable Society of Gray]\'s Inn', 'The Honorable Society of Middle Temple', 'The Honorable Society of Inner Lincon\'s'];
+
+var ghandiQ5 = ['In what year did Ghandi marry?', '1883', '1893', '2002', '1920'];
+
+var ghandiQ6 = ['What was the name of Ghandi\'s wife?', 'Kasturba', 'Nathura', 'Lily', 'Diane'];
+
+var ghandiQ7 = ['Who assassinated Ghandi?', 'Nathuram Vinayakrao Godse', 'Lee Harvey Oswald', 'John Wilkes Booth', 'Rashtriya Swayamsevak Sangh'];
+
+var ghandiQ8 = ['How old was Ghandi when he married?', '13', '10','14','9'];
+
+var ghandiQ9 = ['How old was Ghandi when he died?', '78', '62', '83', '90'];
+
+var ghandiQ10 = ['How many children did Ghandi have?', '4 Sons', '2 Daughters', '2 Daughters 5 Sons', 'none'];
+
+var ghandiQ11 = ['Which book was worked on by Ghandi?', 'Light of India', 'The light of the Hindus', 'Biography of Elon Musk', 'Because of Winn Dixie'];
+
+var ghandiQ12 = ['Ghandi confessed his guilt for _____. Promising to never do the act again.', 'Stealing', 'Drinking', 'Setting random fires', 'Having an Affair'];
+
+var ghandi = ['Mahatma Ghandi', 'IMG URL', ghandiQ1, ghandiQ2, ghandiQ3, ghandiQ4, ghandiQ5, ghandiQ6, ghandiQ7, ghandiQ8, ghandiQ9, ghandiQ10, ghandiQ11, ghandiQ12];
