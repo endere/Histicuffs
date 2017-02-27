@@ -344,3 +344,4 @@ var cleopatra = ['Cleopatra', 'imgURL', cleopatraQ1, cleopatraQ2, cleopatraQ3, c
 ///
 // Cleopatra Above!
 //
+var characters = [daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra];

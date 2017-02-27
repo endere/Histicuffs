@@ -1,5 +1,5 @@
 'use strict';
-var tournySize = 2;
+var tournySize = 8;
 var bannedQuestions = [];
 
 var lineUp = [];
@@ -131,6 +131,8 @@ function quizQuestionSelect(fighterA, fighterB) {
       console.log('rerolling');
     }else{
       quizQuestions.push(fighterB.questions[choiceB]);
+      bannedQuestions.push(quizQuestions);
+      return quizQuestions;
     }
   }
   // while(quizQuestions.length < 5){
@@ -144,6 +146,19 @@ function quizQuestionSelect(fighterA, fighterB) {
 }
 
 //------------------------------FORM--------------------------------------------
+
+
+function displayQuestions(fighterA, fighterB){
+  var quizQuestions = quizQuestionSelect(fighterA, fighterB);
+  var ulEl = document.getElementById('questionWindow');
+  for (var i = 0; i < quizQuestions.length; i++) {
+    var listItem = document.createElement('li');
+    ulEl.appendChild(listItem);
+    listItem.textContent = quizQuestions[i].ask;
+    finalClicks.push(picturesAll[i].clicks);
+    finalNames.push(picturesAll[i].imgName);
+  }
+};
 
 // function handleSubmit(){
 //   var questionForm = document.getElementById('questionWindow');
