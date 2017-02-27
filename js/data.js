@@ -22,15 +22,12 @@ var teddyQ10 = ['Teddy Roosevelt was a member of which political party during hi
 
 var teddyQ11 = ['Teddy Roosevelt was:', 'The youngest person to ever be sworn in as a U.S. President.', 'The first President to serve more than two full terms.', 'The only person who hel the presidency who didn\'t drink.', 'Diagnosed with a pulmonary embolism at birth.'];
 
-var teddyQ12 = ['Which of the following was the name of one of Teddy Roosevelt\'s sons?', 'Adolf', 'Hubert', 'Kermit', 'Percivall'];
+var teddyQ12 = ['Which of the following was the name of one of Teddy Roosevelt\'s sons?', 'Kermit', 'Hubert', 'Adolf', 'Percivall'];
 
 ////
 
 var teddy = ['Teddy Roosevelt', 'img/Teddy.jpg', teddyQ1, teddyQ2, teddyQ3, teddyQ4, teddyQ5, teddyQ6, teddyQ7, teddyQ8, teddyQ9, teddyQ10, teddyQ11, teddyQ12];
 // Teddy Roosevelt Above!
-///
-///
-///
 ///
 ///
 ///
@@ -65,6 +62,7 @@ var daVinci = ['Leonardo Da Vinci','img/leonardo-da-vinci.jpg', daVinciQ1, daVin
 //
 //
 //
+
 var ghandiQ1 = ['In what year was Ghandi born?', '1869', '1789', '1830', '1902'];
 
 var ghandiQ2 = ['How did Ghandi die?', 'Assassination', 'Old Age', 'Heart Attack', 'Starvation'];
@@ -92,6 +90,8 @@ var ghandiQ12 = ['Ghandi confessed his guilt for _____. Promising to never do th
 var ghandi = ['Mahatma Ghandi', 'IMG URL', ghandiQ1, ghandiQ2, ghandiQ3, ghandiQ4, ghandiQ5, ghandiQ6, ghandiQ7, ghandiQ8, ghandiQ9, ghandiQ10, ghandiQ11, ghandiQ12];
 ///
 /// Ghandi Above!
+////
+///
 
 var darwinQ1 = ['What role did Charles Darwin play in biology?', 'He created the theory on The Origin of Species', 'He made the first bacterial pie', 'He discovered the DNA structure' , 'He discovered the mitochondria'];
 
@@ -123,6 +123,7 @@ var darwin = ['Charles Darwin', 'IMG URL', darwinQ1, darwinQ2, darwinQ3, darwinQ
 /////
 /// Darwin Above!
 ///
+
 var voltaireQ1 = ['How long was Voltaire in the Bastille?', '1 year', '2 years', '3 years', '58 years'];
 
 var voltaireQ2 = ['Why was Voltaire in the Bastille?', 'For his love of scandalous verse in Candide', 'Theft', 'His beauty was criminal in the eyes of the French nobility', 'He never went to the Bastille'];
@@ -185,6 +186,7 @@ var joanOfArc = ['Joan of Arc', 'imgURL', joanOfArcQ1, joanOfArcQ2, joanOfArcQ3,
 /// Joan of Arc Above!!
 ///
 //
+
 var maoZedongQ1 = ['What movement did Mao Zedong create in 1966?', 'The cultural revolution', 'The American revolution', 'The Chineses democracy movement', 'The May 4th movement'];
 
 var maoZedongQ2 = ['How did Mao Zedong die?', 'Heart attack', 'Old age', 'Poison', 'Gunshot'];
@@ -216,6 +218,7 @@ var maoZedong = ['Mao Zedong', 'imgURL', maoZedongQ1, maoZedongQ2, maoZedongQ3, 
 /// Mao Zedong Above!
 //
 //
+
 var edgarAllanPoeQ1 = ['Edgar Allan Poe was part of what artistic movement?', 'Romanticism', 'Macabreism', 'Realism', 'Abstractism'];
 
 var edgarAllanPoeQ2 = ['Edgar Allan Poe is one of the country\'s earliest practitioners of what?', 'Short stories', 'Novellas', 'Alcoholism', 'Pastel art'];
@@ -243,3 +246,98 @@ var edgarAllanPoeQ12 = ['Edgar Allan Poe\'s death was caused by what?', 'Unkown 
 //
 
 var edgarAllanPoe = ['Edgar Allan Poe', 'imgURL', edgarAllanPoeQ1, edgarAllanPoeQ2, edgarAllanPoeQ3, edgarAllanPoeQ4, edgarAllanPoeQ5, edgarAllanPoeQ6, edgarAllanPoeQ7, edgarAllanPoeQ8, edgarAllanPoeQ9, edgarAllanPoeQ10, edgarAllanPoeQ11, edgarAllanPoeQ12];
+///
+/// Edgar Allan Poe Above!
+///
+//
+var marieCurieQ1 = ['Marie Curie:', 'Was the first woman to win a nobel prize.', 'Was the first person to discover X-Rays.', 'Owned and ran a bar on the side.', 'Tried to integrate principles of Eastern Philosophy into the scientific method.'];
+
+var marieCurieQ2 = ['Marie Curie:', 'Was the only woman to win more than one Nobel Prize', 'Had a cat named Flopsy that died from radiation poisoning.', 'Discovered the element "Thorium".', 'Was married to a dentist.'];
+
+var marieCurieQ3 = ['Which of the following elements did Marie Curie discover?', 'Radium', 'Selenium', 'Curium', 'Plutonium'];
+
+var marieCurieQ4 = ['One of Curie\'s most important discoveries involving radiation exposure was that:', 'Cancerous cells and tumors are destroyed at a faster rate than healthy cells', 'Gamma radiation could lead to an increase in strength, speed and aggression.', 'Small doses of radiation could relieve migraines.', 'Small amounts of thorium in fertilizer caused corn to grow at a 15% faster rate.'];
+
+var marieCurieQ5 = ['Marie Curie was born in:', 'Poland', 'France', 'America', 'Belgium'];
+
+var marieCurieQ6 = ['One of Marie Curie\'s contributions to WWI was:', 'The use of X-Ray technology to locate bullets and shrapnel in wounded soldiers.', 'The invention of Depleted Uranium munitions', 'Early conceptualization of nuclear weaponry', 'Suggested to use of Helium instead of Hydrogen in zepplins.'];
+
+var marieCurieQ7 = ['Marie Curie was famously quorted as saying:', '"Nothing in life is to be feared, it is only to be understood"', '"There is no law, except the law that there is no law."', '"Imagination is more important than knowledge."', '"Remember to look up at the stars and not down at your feet."'];
+
+var marieCurieQ8 = ['Marie Curie devoted the latter part of her life:', 'To cancer research.', 'To research involving the focused concentration of radiation waves.', 'To fighting childhood obesity', 'To various political reforms.'];
+
+var marieCurieQ9 = ['Marie Curie was NOT', 'The first female scientist to be invited to give the commencement speech at West Point.', 'The first woman in europe to obtain a PHD in a research science.', 'The first woman to ever win a Nobel Prize', 'The first woman professor at Sorbonne.'];
+
+var marieCurieQ10 = ['Marie Curie conducted most of her early research in:', 'A shack.', 'A barn.', 'The basement of a theater.', 'The kitchen in her own home.'];
+
+var marieCurieQ11 = ['Marie Curie did NOT obtain:', 'A Bachelor\'s degree in biology', 'A Masters degree in Physics.', 'A Masters degree in mathematics.', 'A Ph.D in Physics.'];
+
+var marieCurieQ12 = ['What was Marie Curie\'s husband\'s name?', 'Pierre', 'Francois', 'Spicy', 'Larry'];
+///
+///
+//
+
+var marieCurie = ['Marie Curie', 'IMG URL', marieCurieQ1, marieCurieQ2, marieCurieQ3, marieCurieQ4, marieCurieQ5, marieCurieQ6, marieCurieQ7, marieCurieQ8, marieCurieQ9, marieCurieQ10, marieCurieQ11, marieCurieQ12];
+///
+/// Marie Curie Above!
+//
+//
+var hannibalQ1 = ['Which city did Hannibal come from?', 'Carthage', 'Arvad', 'Damascus', 'Herculaneum'];
+
+var hannibalQ2 = ['Across which mountain range did he travel?', 'The Alps', 'The Rockies', 'The Cascades', 'The Himalayas'];
+
+var hannibalQ3 = ['Who was the general that defeated him?', 'Scipio Africanus', 'Marcus Vipsanius Agrippa', 'Alexander the Great', 'Pyrrhus of Epirus'];
+
+var hannibalQ4 = ['In which battle was he decisively defeated?', 'Zama', 'Gaugmela', 'Magnesia', 'Cannae'];
+
+var hannibalQ5 = ['What does the name Hannibal mean in Punic language?', 'Grace of Ba\'al', 'Thunderbolt', 'Will of Hanno', 'Shining'];
+
+var hannibalQ6 = ['What animal is he famous for using in his army?', 'Elephants', 'Camels', 'Dragons', 'Dogs'];
+
+var hannibalQ7 = ['What year was he born in?', '247 B.C.', '107 B.C.', '107 A.D.', '247 A.D.'];
+
+var hannibalQ8 = ['What caused the downfall of his army?', 'Trumpets', 'The weather', 'Superior tactics', 'Greek fire'];
+
+var hannibalQ9 = ['What was his family name?', 'Barca', 'Lecter', 'Hamilcar', 'Gisgo'];
+
+var hannibalQ10 = ['Who sent Hannibal into exile?', 'Himself', 'Julius Caesar', 'Titus', 'Augustus'];
+
+var hannibalQ11 = ['What war did he fight in?', 'The second Punic-war', 'The third Punic-war', 'The Greco-Persian war', 'The war on wall street'];
+
+var hannibalQ12 = ['What did his final letter before his death say?', 'Let us relieve the Romans from the anxiety they have so long experienced...', 'I\'m all out of bubblegum', 'I came, I saw, I conquered', 'Those who defy us shall bend their knees'];
+
+var hannibal = ['Hannibal', 'imgURL', hannibalQ1, hannibalQ2, hannibalQ3, hannibalQ4, hannibalQ5, hannibalQ6, hannibalQ7, hannibalQ8, hannibalQ9, hannibalQ10, hannibalQ11, hannibalQ12];
+//
+// Hannibal Above!
+//
+//
+
+var cleopatraQ1 = ['Cleopatra was what?', 'Macedonian', 'Egyptian', 'Nubian', 'Phonecian'];
+
+var cleopatraQ2 = ['What period of Egyptian history did Cleopatra live in?', 'The Ptolomaic period', 'The Saite period', 'The Amarna period', 'The new kingdom'];
+
+var cleopatraQ3 = ['The most famously known Cleopatra was?', 'Cleopatra VII', 'Cleopatra V', 'Cleopatra III', 'Cleopatra IX'];
+
+var cleopatraQ4 = ['What type of snake is said to have bitten Cleopatra?', 'Asp', 'Viper', 'Wadget', 'Black Mamba'];
+
+var cleopatraQ5 = ['What does Cleopatra\'s name mean?', 'Glory of the father', 'Graceful mother', 'Divine beauty', 'Grace of the gods'];
+
+var cleopatraQ6 = ['Cleopatra used her political ties to help institutionalize which addition to the Roman calendar?', 'Leap year', 'Yule', 'Imbolc', 'The great harvest festival'];
+
+var cleopatraQ7 = ['Who were Cleopatra\'s most notable two lovers?', 'Mark Antony and Julius Caesar', 'Octavian and Augustus Caesar', 'Octavian and Mark Antony', 'Augustus Caesar and Julius Caesar'];
+
+var cleopatraQ8 = ['What city did Cleopatra primarily live in?', 'Alexandria', 'Cairo', 'Rome', 'Thebes'];
+
+var cleopatraQ9 = ['Cleopatra was one of the first in her family to learn what language?', 'Egyptian', 'Latin', 'Greek', 'Cuneiform'];
+
+var cleopatraQ10 = ['When did Cleopatra die?','30 B.C.', '30 A.D.', '130 B.C.', '130 A.D.'];
+
+var cleopatraQ11 = ['Cleopatra had how many children?', '6 children', 'None', '2 children', '6 children'];
+
+var cleopatraQ12 = ['Cleopatra\'s death is said to have been what?', 'A suicide', 'Brutal', 'A murder', 'An accident'];
+//
+//
+var cleopatra = ['Cleopatra', 'imgURL', cleopatraQ1, cleopatraQ2, cleopatraQ3, cleopatraQ4, cleopatraQ5, cleopatraQ6, cleopatraQ7, cleopatraQ8, cleopatraQ9, cleopatraQ10, cleopatraQ11, cleopatraQ12];
+///
+// Cleopatra Above!
+//
