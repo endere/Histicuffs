@@ -31,7 +31,6 @@ var daVinciQ4 = ['How many siblings did Da Vinci have?','17', '5', '0', '7'];
 var daVinci = ['Leonardo Da Vinci','img/leonardo-da-vinci.jpg', daVinciQ1, daVinciQ2, daVinciQ3, daVinciQ4];
 
 var characters = [teddy, daVinci];
-//
-//
+
 //
 //
