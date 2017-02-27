@@ -1,26 +1,37 @@
 'use strict';
 var tournySize = 8;
-var teddyQOne = ['Roosevelt\'s Rough riders famously fought in: ','Cuba','Texas','Panama','Mexico'];
-var teddyQtwo = ['Which of the following was the name of one of Teddy Roosevelt\’s sons?','Kermit','Hubert','Adolf','Percivall'];
-var teddy = ['Teddy Roosevelt', teddyQOne, teddyQtwo];
-var characters = [teddy];
 var lineUp = [];
 function generateCharacters(){
   for (var i = 0; i < characters.length; i++){
-    console.log(characters[i]);
-    new Character(characters[i]);
+    var person = new Character(characters[i]);
+    person.makeQuestions(person.questions);
+    lineUp.push(person);
   }
 }
 function Character(character){
   this.name = character[0];
-  this.QOne = character[1];
-  this.QTwo = character[2];
-  this.Questions = [this.QOne,this.QTwo];
-  lineUp.push(this);
+  this.src = character[1];
+  this.questions = [];
+  for (var i = 2; i < character.length; i++) {
+    this.questions.push(new Question(character[i]));
+  }
 }
-generateCharacters();
-Character.prototype.Question = function(Questions){
+
+Character.prototype.makeQuestions = function(questions){
+  for (var i = 0; i < questions.length; i++) {
+    new Question(questions[i]);
+  }
 };
+
+function Question(questions){
+  this.ask = questions[0];
+  this.correct = questions[1];
+  this.answers = [questions[1], questions[2], questions[3], questions[4]];
+};
+
+generateCharacters();
+console.log(lineUp);
+console.log(lineUp[0].name);
 
 function setUpMatches(){
   var chosen = [];
@@ -76,3 +87,29 @@ function tournament(){
   }
   console.log('The final victor is: ' + finalWinner);
 }
+
+//------------------------------FORM--------------------------------------------
+
+function handleSubmit(){
+  var questionForm = document.getElementById('questionWindow');
+  var i = 0, len = radios.length;
+  var checked = false;
+  var userInput;
+
+  for (; i < len.length; i++) {
+    if (radios[i].checked) {
+      checked = true;
+      userInput = radios[i].value;
+    }
+  }
+  if (!checked) {//if none selected
+    alert('You MUST Select an Answer to Continue.');
+    return;
+  }
+  if (userInput === correct){
+    alert('CORRECT');
+  }
+  else {
+    alert('WRONG.');
+  }
+};
