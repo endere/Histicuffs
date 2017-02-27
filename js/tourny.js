@@ -1,5 +1,6 @@
 'use strict';
-var tournySize = 8;
+var tournySize = 2;
+var bannedQuestions = [];
 
 var lineUp = [];
 function generateCharacters(){
@@ -7,6 +8,7 @@ function generateCharacters(){
     var person = new Character(characters[i]);
     person.makeQuestions(person.questions);
     lineUp.push(person);
+    console.log('lineup' + lineUp.length);
   }
 }
 function Character(character){
@@ -37,20 +39,19 @@ function Question(questions){
 };
 
 generateCharacters();
-console.log(lineUp);
-console.log(lineUp[0].name);
+
 
 function setUpMatches(){
   var chosen = [];
   var contestents = [];
+  console.log('the length is ' + lineUp.length);
   while (chosen.length < tournySize){
     var selected = Math.floor(Math.random() * lineUp.length);
+    console.log(selected);
     if (chosen.includes(selected)){
-      console.log('Already selected, rerolling...');
     } else {
       chosen.push(selected);
     }
-    console.log(chosen);
   }
   for (var i = 0; i < chosen.length; i++) {
     contestents.push(lineUp[chosen[i]]);
@@ -76,8 +77,9 @@ function tournamentRound(contestents){
     while (nextFight.length < 2){
       nextFight.push(contestents.shift());
     }
-    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === true){
-      quiz(nextFight[0],nextFight[1]);
+    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === false){
+      console.log('next fight ' + nextFight[0].name + nextFight[1].name);
+      quizQuestionSelect(nextFight[0],nextFight[1]);
     } else {
       var winner = npcFight(nextFight[0], nextFight[1]);
       winners.push(winner);
@@ -109,31 +111,63 @@ function tournament(){
   console.log('The final victor is: ' + finalWinner);
 }
 
-//------------------------------FORM--------------------------------------------
-
-function handleSubmit(){
-  var questionForm = document.getElementById('questionWindow');
-  var i = 0, len = radios.length;
-  var checked = false;
-  var userInput;
-
-  for (; i < len.length; i++) {
-    if (radios[i].checked) {
-      checked = true;
-      userInput = radios[i].value;
+function quizQuestionSelect(fighterA, fighterB) {
+  console.log('fighterA is ' + fighterA.name );
+  console.log('fighter b is ' + fighterB.name);
+  var quizQuestions = [];
+  while(quizQuestions.length < 2){
+    console.log('loooog' + fighterA.questions);
+    var choiceA = Math.floor(Math.random() * (fighterA.questions.length));
+    if(quizQuestions.indexOf(fighterA.questions[choiceA]) !== -1 || bannedQuestions.indexOf(fighterA.questions[choiceA]) !== -1){
+      console.log('rerolling');
+    }else{
+      quizQuestions.push(fighterA.questions[choiceA]);
+      console.log(choiceA, fighterA.questions[choiceA]);
     }
   }
-  if (!checked) {//if none selected
-    alert('You MUST Select an Answer to Continue.');
-    return;
+  while(quizQuestions.length < 4){
+    var choiceB = Math.floor(Math.random() * (fighterB.questions.length));
+    if(quizQuestions.indexOf(fighterB.questions[choiceB]) !== -1 || bannedQuestions.indexOf(fighterB.questions[choiceB]) !== -1){
+      console.log('rerolling');
+    }else{
+      quizQuestions.push(fighterB.questions[choiceB]);
+    }
   }
-  if (userInput === correct){
-    alert('CORRECT');
-  }
-  else {
-    alert('WRONG.');
-  }
-};
+  // while(quizQuestions.length < 5){
+  //   var choiceC = Math.floor(Math.random() * generalQuestions.length);
+  //   if(quizQuestions.includes(choiceC) || bannedQuestions.includes(choiceC)){
+  //     console.log('rerolling');
+  //   }else{
+  //     quizQuestions.push(generalQuestions[choiceC]);
+    // }
+  console.log(quizQuestions);
+}
 
-generateCharacters();
+//------------------------------FORM--------------------------------------------
+
+// function handleSubmit(){
+//   var questionForm = document.getElementById('questionWindow');
+//   var i = 0, len = radios.length;
+//   var checked = false;
+//   var userInput;
+//
+//   for (; i < len.length; i++) {
+//     if (radios[i].checked) {
+//       checked = true;
+//       userInput = radios[i].value;
+//     }
+//   }
+//   if (!checked) {//if none selected
+//     alert('You MUST Select an Answer to Continue.');
+//     return;
+//   }
+//   if (userInput === Character.[]){
+//     alert('CORRECT');
+//   }
+//   else {
+//     alert('WRONG.');
+//   }
+// };
+
+
 tournament();
