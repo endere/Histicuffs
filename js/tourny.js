@@ -1,5 +1,6 @@
 'use strict';
-var tournySize = 2;
+var tournySize = 8;
+
 var lineUp = [];
 function generateCharacters(){
   for (var i = 0; i < characters.length; i++){
@@ -23,12 +24,21 @@ Character.prototype.makeQuestions = function(questions){
     new Question(questions[i]);
   }
 };
+function Question(questions){
+  this.ask = questions[0];
+  this.correct = questions[1];
+  this.answers = [questions[1], questions[2], questions[3], questions[4]];
+};
 
 function Question(questions){
   this.ask = questions[0];
   this.correct = questions[1];
   this.answers = [questions[1], questions[2], questions[3], questions[4]];
 };
+
+generateCharacters();
+console.log(lineUp);
+console.log(lineUp[0].name);
 
 function setUpMatches(){
   var chosen = [];
@@ -98,6 +108,32 @@ function tournament(){
   }
   console.log('The final victor is: ' + finalWinner);
 }
+
+//------------------------------FORM--------------------------------------------
+
+function handleSubmit(){
+  var questionForm = document.getElementById('questionWindow');
+  var i = 0, len = radios.length;
+  var checked = false;
+  var userInput;
+
+  for (; i < len.length; i++) {
+    if (radios[i].checked) {
+      checked = true;
+      userInput = radios[i].value;
+    }
+  }
+  if (!checked) {//if none selected
+    alert('You MUST Select an Answer to Continue.');
+    return;
+  }
+  if (userInput === correct){
+    alert('CORRECT');
+  }
+  else {
+    alert('WRONG.');
+  }
+};
 
 generateCharacters();
 tournament();
