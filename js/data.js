@@ -341,6 +341,8 @@ var cleopatraQ12 = ['Cleopatra\'s death is said to have been what?', 'A suicide'
 //
 //
 var cleopatra = ['Cleopatra', 'imgURL', cleopatraQ1, cleopatraQ2, cleopatraQ3, cleopatraQ4, cleopatraQ5, cleopatraQ6, cleopatraQ7, cleopatraQ8, cleopatraQ9, cleopatraQ10, cleopatraQ11, cleopatraQ12];
+
+var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra];
 ///
 // Cleopatra Above!
 //

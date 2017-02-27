@@ -40,7 +40,6 @@ function Question(questions){
 
 generateCharacters();
 
-
 function setUpMatches(){
   var chosen = [];
   var contestents = [];
@@ -77,40 +76,51 @@ function tournamentRound(contestents){
     while (nextFight.length < 2){
       nextFight.push(contestents.shift());
     }
-    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === false){
+    console.log('this is next fight: ' + nextFight[0].name + ' ' + nextFight[1].name);
+    console.log(nextFight[0]);
+    console.log(nextFight[0].isPlayer);
+    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === true){
       console.log('next fight ' + nextFight[0].name + nextFight[1].name);
-      quizQuestionSelect(nextFight[0],nextFight[1]);
+      quiz(nextFight[0],nextFight[1]);
     } else {
       var winner = npcFight(nextFight[0], nextFight[1]);
       winners.push(winner);
     }
-    console.log(winners);
-    return winners;
   }
+  for (var i = 0; i < winners.length; i++) {
+    console.log('winners: ' + winners[i].name);
+  }
+  return winners;
 }
 function tournament(){
   var contestents = setUpMatches();
   console.log('beginning tourny');
   if (tournySize === 2){
     var finalWinner = tournamentRound(contestents);
+    console.log('The final victor is: ' + finalWinner[0].name);
   }
   if (tournySize === 4){
     var roundOneWinners = tournamentRound(contestents);
     var finalWinner = tournamentRound(roundOneWinners);
+    console.log('The final victor is: ' + finalWinner[0].name);
   }
   if (tournySize === 8){
     var roundOneWinners = tournamentRound(contestents);
     var roundTwoWinners = tournamentRound(roundOneWinners);
     var finalWinner = tournamentRound(roundTwoWinners);
+    console.log('The final victor is: ' + finalWinner[0].name);
   } else if (tournySize === 16){
     var roundOneWinners = tournamentRound(contestents);
     var roundTwoWinners = tournamentRound(roundOneWinners);
     var roudThreeWinners = tournamentRound(roundTwoWinners);
     var finalWinner = tournamentRound(roundThreeWinners);
+    console.log('The final victor is: ' + finalWinner[0].name);
   }
-  console.log('The final victor is: ' + finalWinner);
 }
+function quiz(fighterA, fighterB){
+  var quizQuestions = quizQuestionSelect(fighterA, fighterB);
 
+}
 function quizQuestionSelect(fighterA, fighterB) {
   console.log('fighterA is ' + fighterA.name );
   console.log('fighter b is ' + fighterB.name);
@@ -143,6 +153,7 @@ function quizQuestionSelect(fighterA, fighterB) {
   //     quizQuestions.push(generalQuestions[choiceC]);
     // }
   console.log(quizQuestions);
+  return quizQuestions;
 }
 
 //------------------------------FORM--------------------------------------------
@@ -183,6 +194,5 @@ function displayQuestions(fighterA, fighterB){
 //     alert('WRONG.');
 //   }
 // };
-
 
 tournament();
