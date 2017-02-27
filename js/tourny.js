@@ -1,9 +1,8 @@
 'use strict';
-var tournySize = 8;
+var tournySize = 2;
 var lineUp = [];
 function generateCharacters(){
   for (var i = 0; i < characters.length; i++){
-    console.log(characters[i]);
     var person = new Character(characters[i]);
     person.makeQuestions(person.questions);
     lineUp.push(person);
@@ -12,6 +11,7 @@ function generateCharacters(){
 function Character(character){
   this.name = character[0];
   this.src = character[1];
+  this.isPlayer = false;
   this.questions = [];
   for (var i = 2; i < character.length; i++) {
     this.questions.push(new Question(character[i]));
@@ -30,14 +30,11 @@ function Question(questions){
   this.answers = [questions[1], questions[2], questions[3], questions[4]];
 };
 
-generateCharacters();
-console.log(lineUp);
-console.log(lineUp[0].name);
-
 function setUpMatches(){
   var chosen = [];
+  var contestents = [];
   while (chosen.length < tournySize){
-    var selected = Math.floor(Math.random() * characters.length);
+    var selected = Math.floor(Math.random() * lineUp.length);
     if (chosen.includes(selected)){
       console.log('Already selected, rerolling...');
     } else {
@@ -45,7 +42,10 @@ function setUpMatches(){
     }
     console.log(chosen);
   }
-  return chosen;
+  for (var i = 0; i < chosen.length; i++) {
+    contestents.push(lineUp[chosen[i]]);
+  }
+  return contestents;
 }
 function npcFight(fighterA, fighterB){
   var winSelect = Math.floor(Math.random() * 2);
@@ -66,16 +66,26 @@ function tournamentRound(contestents){
     while (nextFight.length < 2){
       nextFight.push(contestents.shift());
     }
-    console.log('next fight is ' + nextFight);
-    var winner = npcFight(nextFight[0], nextFight[1]);
-    winners.push(winner);
+    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === true){
+      quiz(nextFight[0],nextFight[1]);
+    } else {
+      var winner = npcFight(nextFight[0], nextFight[1]);
+      winners.push(winner);
+    }
+    console.log(winners);
+    return winners;
   }
-  console.log(winners);
-  return winners;
 }
-
 function tournament(){
   var contestents = setUpMatches();
+  console.log('beginning tourny');
+  if (tournySize === 2){
+    var finalWinner = tournamentRound(contestents);
+  }
+  if (tournySize === 4){
+    var roundOneWinners = tournamentRound(contestents);
+    var finalWinner = tournamentRound(roundOneWinners);
+  }
   if (tournySize === 8){
     var roundOneWinners = tournamentRound(contestents);
     var roundTwoWinners = tournamentRound(roundOneWinners);
@@ -88,3 +98,6 @@ function tournament(){
   }
   console.log('The final victor is: ' + finalWinner);
 }
+
+generateCharacters();
+tournament();
