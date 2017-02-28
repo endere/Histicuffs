@@ -341,3 +341,35 @@ var cleopatra = ['Cleopatra', 'imgURL', cleopatraQ1, cleopatraQ2, cleopatraQ3, c
 ///
 // Cleopatra Above!
 //
+//
+
+var harrietQ1 = ['Harriet Tubman is know for her work as an?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
+
+var harrietQ2 = ['Harriet Tubman\'s birth name was ?', 'Araminta Ross', 'Neta-Lee Hershlag', 'Harriet Beecher Stowe', 'Emily Robinson'];
+
+var harrietQ3 = ['A severe blow to the head from a 2 pound weight at the age of 12 gave Harriet Tubman what condition?', 'Narcolepsy', 'Dementia', 'Amnesia', 'Epilepsy'];
+
+var harrietQ4 = ['What network did Harriet Tubman use to free hundreds of slaves?', 'The Underground Railroad', 'The Secret Tunnel', 'The Hidden Highway', 'The Grand Theft Orchestra'];
+
+var harrietQ5 = ['Harriet Tubman will be appearing on the american __ dollar bill.', '20','5','10','50'];
+
+var harrietQ6 = ['What event catalyzed Harriet Tubman running away from slavery?', 'The sickness and death of her owner.', 'A sleeping guard', 'A cart crash', 'A heart to heart with her brother'];
+
+var harrietQ7 = ['In what year was Tubman born?', '1822', '1992', '1787', '1830'];
+
+var harrietQ8 = ['In what year did Tubman die?', '1913', '2002', '1930', '1900'];
+
+var harrietQ9 = ['In what state was Harriet born?', 'Maryland', 'Georgia', 'Alabama', 'New York'];
+
+var harrietQ10 = ['How man children did Harriet Tubman have?', '1', '2', '7','12'];
+
+var harrietQ11 = ['What was the name of Harriet Tubman\'s daughter?', 'Gertie', 'Rose' ,'Harriet jr', 'Sally'];
+
+var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Boston', 'New York', 'Chicago'];
+//
+//
+//
+var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
+//
+//
+var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
