@@ -2,16 +2,23 @@
 var tournySize = 8;
 var bannedQuestions = [];
 var lineUp = [];
+var quizQuestions = [];
+var holder = document.getElementById('form');
+var quizLength = 0;
+var questionRepeats = 0;
+var health = 5;
+var remaining = [];
 
-function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId, tagIdentifierTwo, tagIdentifiernameTwo){
+function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId){
   var element = document.createElement(tagType);
   element.setAttribute(tagIdentifier, tagIdentifiername);
-  element.setAttribute(tagIdentifierTwo, tagIdentifiernameTwo);
   element.textContent = elementContent;
 //  console.log(element);
   sectionId.appendChild(element);
   //this element creation function created by Benjamin Ayzenberg.
 }
+// Constructor Functions//
+//--------------------------------------------
 function generateCharacters(){
   for (var i = 0; i < characters.length; i++){
     var person = new Character(characters[i]);
@@ -40,14 +47,16 @@ function Question(questions){
   this.answers = [questions[1], questions[2], questions[3], questions[4]];
 };
 
-function Question(questions){
-  this.ask = questions[0];
-  this.correct = questions[1];
-  this.answers = [questions[1], questions[2], questions[3], questions[4]];
-};
+// function Question(questions){
+//   this.ask = questions[0];
+//   this.correct = questions[1];
+//   this.answers = [questions[1], questions[2], questions[3], questions[4]];
+// };
 
 generateCharacters();
-
+////-----------------------------------------------
+/// This gets the tournament set up
+///-----------------------------------------
 function setUpMatches(){
   var chosen = [];
   var contestents = [];
@@ -63,6 +72,9 @@ function setUpMatches(){
   }
   return contestents;
 }
+////------------------------------------------
+// This runs if niether character is the player.
+///--------------------------------------------
 function npcFight(fighterA, fighterB){
   var winSelect = Math.floor(Math.random() * 2);
   if (winSelect === 0){
@@ -73,59 +85,61 @@ function npcFight(fighterA, fighterB){
     return fighterB;
   }
 }
-
+//---------------------------------------
+// This function pits two characters against each other and hold the framework for the tournment round. Also checks if either character is the player in which case it initiates a quiz otherwise it calls upon the npc fight.
+//----------------------------------------------
 function tournamentRound(contestents){
-  var winners = [];
+  remaining = [];
   var roundLength = contestents.length / 2;
+  var playerFight = [];
   for (var i = 0; i < roundLength; i++){
     var nextFight = [];
     while (nextFight.length < 2){
       nextFight.push(contestents.shift());
     }
     console.log('this is next fight: ' + nextFight[0].name + ' and ' + nextFight[1].name);
-    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === true){
-      quiz(nextFight[0],nextFight[1]);
+    if (nextFight[0].isPlayer === true){
+      // quiz(nextFight[0],nextFight[1]);
+      playerFight.push(nextFight[0]);
+      playerFight.push(nextFight[1]);
+      remaining.push(nextFight[0]);
+    } else if (nextFight[1].isPlayer === true){
+      // quiz(nextFight[0],nextFight[1]);
+      playerFight.push(nextFight[0]);
+      playerFight.push(nextFight[1]);
+      remaining.push(nextFight[1]);
     } else {
       var winner = npcFight(nextFight[0], nextFight[1]);
-      winners.push(winner);
+      remaining.push(winner);
     }
   }
-  for (var i = 0; i < winners.length; i++) {
-    console.log('winners: ' + winners[i].name);
-  }
-  return winners;
+  quiz(playerFight[0],playerFight[1]);
 }
-function tournament(){
+//---------------------------------------------
+//This calls upon the set up and then run a different size tourney based upon how many characters are selected to participate. 2-4-8-16
+//-----------------------------------------------
+
+function setUp(){
   var contestents = setUpMatches();
-  console.log('beginning tourny');
-  if (tournySize === 2){
-    var finalWinner = tournamentRound(contestents);
-    console.log('The final victor is: ' + finalWinner[0].name);
-  }
-  if (tournySize === 4){
-    var roundOneWinners = tournamentRound(contestents);
-    var finalWinner = tournamentRound(roundOneWinners);
-    console.log('The final victor is: ' + finalWinner[0].name);
-  }
-  if (tournySize === 8){
-    var roundOneWinners = tournamentRound(contestents);
-    var roundTwoWinners = tournamentRound(roundOneWinners);
-    var finalWinner = tournamentRound(roundTwoWinners);
-    console.log('The final victor is: ' + finalWinner[0].name);
-  } else if (tournySize === 16){
-    var roundOneWinners = tournamentRound(contestents);
-    var roundTwoWinners = tournamentRound(roundOneWinners);
-    var roudThreeWinners = tournamentRound(roundTwoWinners);
-    var finalWinner = tournamentRound(roundThreeWinners);
-    console.log('The final victor is: ' + finalWinner[0].name);
-  }
+  console.log(contestents);
+  chooseCharacter(contestents);
 }
+function chooseCharacter(contestents){
+  contestents[2].isPlayer = true;
+  tournamentRound(contestents);
+}
+//----------------------------------------------
+// This is what runs the player quiz the first function sets the quiz up and calls upon quiz question select to select 5 questions then initiates the askAQuestion function which displays the question and its answers in a form. Recieves input from the player processes correct and incorect answers and loops back itself up to 5 times or until the player has run out of chances
+//------------------------------------
 function quiz(fighterA, fighterB){
-  var quizQuestions = quizQuestionSelect(fighterA, fighterB);
-  console.log(quizQuestions);
-  var holder = document.getElementById('form');
-  var quizLength = quizQuestions.length;
-  var questionRepeats = 0;
+  quizQuestions = quizQuestionSelect(fighterA, fighterB);
+  holder = document.getElementById('form');
+  quizLength = quizQuestions.length;
+  questionRepeats = 0;
+  if (document.getElementById('answerHolder')){
+    document.getElementById('answerHolder').parentNode.removeChild(document.getElementById('answerHolder'));
+  }
+  createElement('div', 'id', 'answerHolder', '', document.getElementById('holderParent'));
   askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
 }
 
@@ -134,19 +148,24 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
     if (document.getElementById('fieldSet')){
       document.getElementById('fieldSet').parentNode.removeChild(document.getElementById('fieldSet'));
     }
-    createElement('fieldset', 'id', 'fieldSet', '', holder, 'class', 'quiz');
+    createElement('fieldset', 'id', 'fieldSet', '', holder);
     var nextQuestion = quizQuestions.shift(0);
-    createElement('legend', 'id', 'ask', nextQuestion.ask, document.getElementById('fieldSet'), 'class', 'quiz');
+    createElement('legend', 'id', 'ask', nextQuestion.ask, document.getElementById('fieldSet'));
     var answersLength = nextQuestion.answers.length;
     for (var j = 0; j < answersLength; j++) {
       var number = Math.floor(Math.random() * (answersLength - j));
       var nextAnswer = nextQuestion.answers.splice(number, 1);
-      console.log(nextAnswer);
-      createElement('input', 'type', 'radio', '', document.getElementById('fieldSet'), 'id', j);
-      createElement('label', 'for', j, nextAnswer, document.getElementById('fieldSet'), 'class', 'quiz');
+      createElement('div', 'id', 'answer' + j, nextAnswer, document.getElementById('fieldSet'));
+      document.getElementById('answer' + j).addEventListener('click', handleSubmit);
+      document.getElementById('answer' + j).setAttribute('class','answerButton');
+      if(nextAnswer.includes(nextQuestion.correct)){
+        document.getElementById('answer' + j).setAttribute('id','correct');
+      }
     }
-    createElement('input', 'type', 'submit', 'Answer', document.getElementById('fieldSet'), 'value', 'submit');
-    questionRepeats += 1;
+  } else if (health > 0){
+    tournamentRound(remaining);
+  } else if (health === 0){
+    alert('game over');
   }
 }
 function quizQuestionSelect(fighterA, fighterB) {
@@ -182,29 +201,36 @@ function quizQuestionSelect(fighterA, fighterB) {
 
 //------------------------------FORM--------------------------------------------
 
-// function handleSubmit(){
-//   var questionForm = document.getElementById('questionWindow');
-//   var i = 0, len = radios.length;
-//   var checked = false;
-//   var userInput;
-//
-//   for (; i < len.length; i++) {
-//     if (radios[i].checked) {
-//       checked = true;
-//       userInput = radios[i].value;
-//     }
-//   }
-//   if (!checked) {//if none selected
-//     alert('You MUST Select an Answer to Continue.');
-//     return;
-//   }
-//   if (userInput === Character.[]){
-//     alert('CORRECT');
-//   }
-//   else {
-//     alert('WRONG.');
-//   }
-// };
+function handleSubmit(event){
+  event.preventDefault();
+  event.stopPropagation();
 
-//tournament();
-quiz(lineUp[10], lineUp[7]);
+  if(event.target.id === 'correct'){
+    createElement('div', 'class', 'result', 'Correct!', document.getElementById('answerHolder'));
+  } else {
+    createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
+    health -= 1;
+    console.log('health remaining: ' + health);
+  }
+  questionRepeats += 1;
+  askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
+  // var questionForm = document.getElementById('fieldSet');
+  // var len = radios.length;
+  // var checked = false;
+  // var userInput;
+  // console.log(len);
+  // for(var i = 0; i < len.length; i++){
+  //   if(radios[i].checked){
+  //     checked = true;
+  //     userInput = radios[i].value;
+  //   }
+  // }
+  // if (!checked) {//if none selected
+  //   alert('You MUST Select an Answer to Continue.');
+  //   return;
+  // }
+
+};
+
+setUp();
+//quiz(lineUp[11], lineUp[7]);
