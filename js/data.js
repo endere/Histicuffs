@@ -287,27 +287,27 @@ var marieCurie = ['Marie Curie', 'IMG URL', marieCurieQ1, marieCurieQ2, marieCur
 //
 var hannibalQ1 = ['Which city did Hannibal come from?', 'Carthage', 'Arvad', 'Damascus', 'Herculaneum'];
 
-var hannibalQ2 = ['Across which mountain range did he travel?', 'The Alps', 'The Rockies', 'The Cascades', 'The Himalayas'];
+var hannibalQ2 = ['Across which mountain range did Hannibal travel?', 'The Alps', 'The Rockies', 'The Cascades', 'The Himalayas'];
 
-var hannibalQ3 = ['Who was the general that defeated him?', 'Scipio Africanus', 'Marcus Vipsanius Agrippa', 'Alexander the Great', 'Pyrrhus of Epirus'];
+var hannibalQ3 = ['Who was the general that defeated Hannibal?', 'Scipio Africanus', 'Marcus Vipsanius Agrippa', 'Alexander the Great', 'Pyrrhus of Epirus'];
 
-var hannibalQ4 = ['In which battle was he decisively defeated?', 'Zama', 'Gaugmela', 'Magnesia', 'Cannae'];
+var hannibalQ4 = ['In which battle was Hannibal decisively defeated?', 'Zama', 'Gaugmela', 'Magnesia', 'Cannae'];
 
 var hannibalQ5 = ['What does the name Hannibal mean in Punic language?', 'Grace of Ba\'al', 'Thunderbolt', 'Will of Hanno', 'Shining'];
 
-var hannibalQ6 = ['What animal is he famous for using in his army?', 'Elephants', 'Camels', 'Dragons', 'Dogs'];
+var hannibalQ6 = ['What animal is Hannibal famous for using in his army?', 'Elephants', 'Camels', 'Dragons', 'Dogs'];
 
-var hannibalQ7 = ['What year was he born in?', '247 B.C.', '107 B.C.', '107 A.D.', '247 A.D.'];
+var hannibalQ7 = ['What year was Hannibal born?', '247 B.C.', '107 B.C.', '107 A.D.', '247 A.D.'];
 
-var hannibalQ8 = ['What caused the downfall of his army?', 'Trumpets', 'The weather', 'Superior tactics', 'Greek fire'];
+var hannibalQ8 = ['What caused the downfall of Hannibal\'s army?', 'Trumpets', 'The weather', 'Superior tactics', 'Greek fire'];
 
-var hannibalQ9 = ['What was his family name?', 'Barca', 'Lecter', 'Hamilcar', 'Gisgo'];
+var hannibalQ9 = ['What was Hannibal\'s family name?', 'Barca', 'Lecter', 'Hamilcar', 'Gisgo'];
 
 var hannibalQ10 = ['Who sent Hannibal into exile?', 'Himself', 'Julius Caesar', 'Titus', 'Augustus'];
 
-var hannibalQ11 = ['What war did he fight in?', 'The second Punic-war', 'The third Punic-war', 'The Greco-Persian war', 'The war on wall street'];
+var hannibalQ11 = ['What war did Hannibal fight in?', 'The second Punic-war', 'The third Punic-war', 'The Greco-Persian war', 'The war on wall street'];
 
-var hannibalQ12 = ['What did his final letter before his death say?', 'Let us relieve the Romans from the anxiety they have so long experienced...', 'I\'m all out of bubblegum', 'I came, I saw, I conquered', 'Those who defy us shall bend their knees'];
+var hannibalQ12 = ['What did Hannibal\'s final letter before his death say?', 'Let us relieve the Romans from the anxiety they have so long experienced...', 'I\'m all out of bubblegum', 'I came, I saw, I conquered', 'Those who defy us shall bend their knees'];
 
 var hannibal = ['Hannibal', 'imgURL', hannibalQ1, hannibalQ2, hannibalQ3, hannibalQ4, hannibalQ5, hannibalQ6, hannibalQ7, hannibalQ8, hannibalQ9, hannibalQ10, hannibalQ11, hannibalQ12];
 //
@@ -335,15 +335,78 @@ var cleopatraQ9 = ['Cleopatra was one of the first in her family to learn what l
 
 var cleopatraQ10 = ['When did Cleopatra die?','30 B.C.', '30 A.D.', '130 B.C.', '130 A.D.'];
 
-var cleopatraQ11 = ['Cleopatra had how many children?', '6 children', 'None', '2 children', '6 children'];
+var cleopatraQ11 = ['Cleopatra had how many children?', '6 children', 'None', '2 children', '4 children'];
 
 var cleopatraQ12 = ['Cleopatra\'s death is said to have been what?', 'A suicide', 'Brutal', 'A murder', 'An accident'];
 //
 //
 var cleopatra = ['Cleopatra', 'imgURL', cleopatraQ1, cleopatraQ2, cleopatraQ3, cleopatraQ4, cleopatraQ5, cleopatraQ6, cleopatraQ7, cleopatraQ8, cleopatraQ9, cleopatraQ10, cleopatraQ11, cleopatraQ12];
 
-var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra];
+
+var harrietQ1 = ['Harriet Tubman is know for her work as an?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
+
+var harrietQ2 = ['Harriet Tubman\'s birth name was ?', 'Araminta Ross', 'Neta-Lee Hershlag', 'Harriet Beecher Stowe', 'Emily Robinson'];
+
+var harrietQ3 = ['A severe blow to the head from a 2 pound weight at the age of 12 gave Harriet Tubman what condition?', 'Narcolepsy', 'Dementia', 'Amnesia', 'Epilepsy'];
+
+var harrietQ4 = ['What network did Harriet Tubman use to free hundreds of slaves?', 'The Underground Railroad', 'The Secret Tunnel', 'The Hidden Highway', 'The Grand Theft Orchestra'];
+
+var harrietQ5 = ['Harriet Tubman will be appearing on the american __ dollar bill.', '20','5','10','50'];
+
+var harrietQ6 = ['What event catalyzed Harriet Tubman running away from slavery?', 'The sickness and death of her owner.', 'A sleeping guard', 'A cart crash', 'A heart to heart with her brother'];
+
+var harrietQ7 = ['In what year was Tubman born?', '1822', '1992', '1787', '1830'];
+
+var harrietQ8 = ['In what year did Tubman die?', '1913', '2002', '1930', '1900'];
+
+var harrietQ9 = ['In what state was Harriet born?', 'Maryland', 'Georgia', 'Alabama', 'New York'];
+
+var harrietQ10 = ['How many children did Harriet Tubman have?', '1', '2', '7','12'];
+
+var harrietQ11 = ['What was the name of Harriet Tubman\'s daughter?', 'Gertie', 'Rose' ,'Harriet jr', 'Sally'];
+
+var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Boston', 'New York', 'Chicago'];
+//
+//
+//
+var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
+
+var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
 ///
 // Cleopatra Above!
 //
+<<<<<<< HEAD
 var characters = [daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra];
+=======
+//
+
+var harrietQ1 = ['Harriet Tubman is know for her work as an?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
+
+var harrietQ2 = ['Harriet Tubman\'s birth name was ?', 'Araminta Ross', 'Neta-Lee Hershlag', 'Harriet Beecher Stowe', 'Emily Robinson'];
+
+var harrietQ3 = ['A severe blow to the head from a 2 pound weight at the age of 12 gave Harriet Tubman what condition?', 'Narcolepsy', 'Dementia', 'Amnesia', 'Epilepsy'];
+
+var harrietQ4 = ['What network did Harriet Tubman use to free hundreds of slaves?', 'The Underground Railroad', 'The Secret Tunnel', 'The Hidden Highway', 'The Grand Theft Orchestra'];
+
+var harrietQ5 = ['Harriet Tubman will be appearing on the american __ dollar bill.', '20','5','10','50'];
+
+var harrietQ6 = ['What event catalyzed Harriet Tubman running away from slavery?', 'The sickness and death of her owner.', 'A sleeping guard', 'A cart crash', 'A heart to heart with her brother'];
+
+var harrietQ7 = ['In what year was Tubman born?', '1822', '1992', '1787', '1830'];
+
+var harrietQ8 = ['In what year did Tubman die?', '1913', '2002', '1930', '1900'];
+
+var harrietQ9 = ['In what state was Harriet born?', 'Maryland', 'Georgia', 'Alabama', 'New York'];
+
+var harrietQ10 = ['How man children did Harriet Tubman have?', '1', '2', '7','12'];
+
+var harrietQ11 = ['What was the name of Harriet Tubman\'s daughter?', 'Gertie', 'Rose' ,'Harriet jr', 'Sally'];
+
+var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Boston', 'New York', 'Chicago'];
+//
+//
+//
+var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
+//
+var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
+>>>>>>> ad4e6b74f0e792c1f1573dd761c6b44b39894aea
