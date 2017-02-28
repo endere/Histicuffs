@@ -1,6 +1,7 @@
 'use strict';
 var tournySize = 8;
 var bannedQuestions = [];
+var quizQuestions = [];
 var lineUp = [];
 var quizQuestions = [];
 var holder = document.getElementById('form');
@@ -24,6 +25,7 @@ function generateCharacters(){
     var person = new Character(characters[i]);
     person.makeQuestions(person.questions);
     lineUp.push(person);
+    console.log('lineup' + lineUp.length);
   }
 }
 function Character(character){
@@ -57,11 +59,14 @@ generateCharacters();
 ////-----------------------------------------------
 /// This gets the tournament set up
 ///-----------------------------------------
+
 function setUpMatches(){
   var chosen = [];
   var contestents = [];
+  console.log('the length is ' + lineUp.length);
   while (chosen.length < tournySize){
     var selected = Math.floor(Math.random() * lineUp.length);
+    console.log(selected);
     if (chosen.includes(selected)){
     } else {
       chosen.push(selected);
@@ -170,14 +175,16 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
 }
 function quizQuestionSelect(fighterA, fighterB) {
   console.log('fighterA is ' + fighterA.name );
-  console.log('fighterB is ' + fighterB.name);
-  var quizQuestions = [];
+  console.log('fighter b is ' + fighterB.name);
+
   while(quizQuestions.length < 2){
+    console.log('loooog' + fighterA.questions);
     var choiceA = Math.floor(Math.random() * (fighterA.questions.length));
     if(quizQuestions.indexOf(fighterA.questions[choiceA]) !== -1 || bannedQuestions.indexOf(fighterA.questions[choiceA]) !== -1){
       console.log('rerolling');
     }else{
       quizQuestions.push(fighterA.questions[choiceA]);
+      console.log(choiceA, fighterA.questions[choiceA]);
     }
   }
   while(quizQuestions.length < 4){
@@ -186,6 +193,8 @@ function quizQuestionSelect(fighterA, fighterB) {
       console.log('rerolling');
     }else{
       quizQuestions.push(fighterB.questions[choiceB]);
+      bannedQuestions.push(quizQuestions);
+      return quizQuestions;
     }
   }
   // while(quizQuestions.length < 5){
@@ -195,8 +204,8 @@ function quizQuestionSelect(fighterA, fighterB) {
   //   }else{
   //     quizQuestions.push(generalQuestions[choiceC]);
     // }
-  bannedQuestions.push(quizQuestions);
-  return quizQuestions;
+  console.log(quizQuestions[0].ask);
+  // return quizQuestions;
 }
 
 //------------------------------FORM--------------------------------------------
@@ -234,3 +243,4 @@ function handleSubmit(event){
 
 setUp();
 //quiz(lineUp[11], lineUp[7]);
+

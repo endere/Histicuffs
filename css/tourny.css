@@ -1,4 +1,54 @@
-radio{
+body{
+  background-image: url("../img/bgimages/aztec.jpg");
+background-size: cover;
+}
+
+.titlebar{
+  display: inline;
+  width: 960px;
+  height: 90px;
+  text-align: center;
+  background-color: red;
+}
+
+a{
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+
+header {
+  background-color: #a18667;
+  border: solid;
+  padding-bottom: 15px;
+}
+/*.frame{
+  height: 1000px;
+  width: auto;
+  background-color: #88931a;
+  text-align: center;
+  margin: auto;
+}*/
+.bracket{
+  display: block;
+  background-image: url("../img/bgimages/bracket.png");
+  background-size: cover;
+  height: 1000px;
+  width: auto;
+  text-align: center;
+
+
+
+
+}
+
+.roundOne{
+  background-color: red;
+  margin-bottom: 200px;
+
 }
 
 .answerButton{
