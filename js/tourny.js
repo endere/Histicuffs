@@ -66,7 +66,6 @@ function setUpMatches(){
   console.log('the length is ' + lineUp.length);
   while (chosen.length < tournySize){
     var selected = Math.floor(Math.random() * lineUp.length);
-    console.log(selected);
     if (chosen.includes(selected)){
     } else {
       chosen.push(selected);
@@ -126,7 +125,6 @@ function tournamentRound(contestents){
 
 function setUp(){
   var contestents = setUpMatches();
-  console.log(contestents);
   chooseCharacter(contestents);
 }
 function chooseCharacter(contestents){
@@ -140,6 +138,8 @@ function quiz(fighterA, fighterB){
   quizQuestions = quizQuestionSelect(fighterA, fighterB);
   holder = document.getElementById('form');
   quizLength = quizQuestions.length;
+  console.log('quizlength is ' + quizLength);
+  console.log(quizQuestions);
   questionRepeats = 0;
   if (document.getElementById('answerHolder')){
     document.getElementById('answerHolder').parentNode.removeChild(document.getElementById('answerHolder'));
@@ -176,15 +176,12 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
 function quizQuestionSelect(fighterA, fighterB) {
   console.log('fighterA is ' + fighterA.name );
   console.log('fighter b is ' + fighterB.name);
-
   while(quizQuestions.length < 2){
-    console.log('loooog' + fighterA.questions);
     var choiceA = Math.floor(Math.random() * (fighterA.questions.length));
     if(quizQuestions.indexOf(fighterA.questions[choiceA]) !== -1 || bannedQuestions.indexOf(fighterA.questions[choiceA]) !== -1){
       console.log('rerolling');
     }else{
       quizQuestions.push(fighterA.questions[choiceA]);
-      console.log(choiceA, fighterA.questions[choiceA]);
     }
   }
   while(quizQuestions.length < 4){
@@ -194,7 +191,6 @@ function quizQuestionSelect(fighterA, fighterB) {
     }else{
       quizQuestions.push(fighterB.questions[choiceB]);
       bannedQuestions.push(quizQuestions);
-      return quizQuestions;
     }
   }
   // while(quizQuestions.length < 5){
@@ -204,8 +200,8 @@ function quizQuestionSelect(fighterA, fighterB) {
   //   }else{
   //     quizQuestions.push(generalQuestions[choiceC]);
     // }
-  console.log(quizQuestions[0].ask);
   // return quizQuestions;
+  return quizQuestions;
 }
 
 //------------------------------FORM--------------------------------------------
@@ -243,4 +239,3 @@ function handleSubmit(event){
 
 setUp();
 //quiz(lineUp[11], lineUp[7]);
-
