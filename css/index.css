@@ -1,0 +1,53 @@
+html {
+  background-color: #a18667;
+}
+
+h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introSection {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: #d39d5e;
+}
+
+.intro {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
+
+fieldset {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#usernameForm {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+
+}
+
+label {
+  display: block;
+}
+
+.roster {
+  display: inline;
+  margin: auto;
+  font-size: 20px;
+}
+
+#left-roster {
+  float: left;
+}
+
+#right-roster {
+  float: right;
+}
