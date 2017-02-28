@@ -1,2 +1,10 @@
 radio{
 }
+
+.answerButton{
+  max-width: 100px;
+  max-height: 50px;
+  background-color: green;
+  border: 1px solid;
+  margin: 5px;
+}
