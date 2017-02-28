@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Histicuffs</title>
+    <header>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tourny.html">Game</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+      </ul>
+    </header>
+  </head>
+  <body>
+    <section class="intro introSection" >
+      <h1>Welcome to Histicuffs!</h1>
+      <p class="intro">Histicuffs, historical fisticuffs! The only place on the web where you can witness a fistfight between Cleopatra and Mao Zedong! Metaphorically and using your imagination, of course.</p>
+      <p class="intro">The rules are simple. The game will give you a selection of 8 random historical figures from the roster below. Click on the one you would like to play as through the bracket. You will be matched against random opponents as you proceed and must get 3 out of 5 questions correct in order to move on.</p>
+      <p class="intro">Play smart lest Gandhi beat you to the Atomic Era and nuke everyone.</p>
+    </section>
+    <div id="usernameGet">
+      <form id="usernameForm">
+        <fieldset>
+          <label for="username">What's your name?</label>
+          <input type="text" name="username">
+          <button type="submit" name="submitUsername">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    <ul class="roster" id="left-roster">
+      <li>Mao Zedong<p>Part of the People's Republic of China.</p></li>
+      <li>Cleopatra</li>
+      <li>Mahatma Gandhi</li>
+      <li>Teddy Roosevelt</li>
+      <li><img src="img/leonardo-da-vinci.jpg" alt="">Leonardo DaVinci</li>
+      <li>Charles Darwin</li>
+    </ul>
+    <ul class="roster" id="right-roster">
+      <li>Voltaire</li>
+      <li>Joan of Arc</li>
+      <li>Edgar Allan Poe</li>
+      <li>Marie Curie</li>
+      <li>Hannibal</li>
+      <li>Harriet Tubman</li>
+    </ul>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
