@@ -375,9 +375,6 @@ var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong
 // Cleopatra Above!
 //
 
-var characters = [daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra];
-//
-
 var harrietQ1 = ['Harriet Tubman is know for her work as an?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
 
 var harrietQ2 = ['Harriet Tubman\'s birth name was ?', 'Araminta Ross', 'Neta-Lee Hershlag', 'Harriet Beecher Stowe', 'Emily Robinson'];
@@ -433,3 +430,5 @@ var generalQ10 = ['Japan\'s Meiji restoration period was known for being:', 'The
 var generalQ11 = ['Which of these locations did Bill and Ted not visit?', 'Cairo', 'Orleans', 'Vienna', 'Kassel'];
 
 var generalQ12 = ['Who was the first to write about Atlantis?', 'Plato', 'Aristotle', 'Socrates', 'Homer'];
+
+var generalQuestions = [generalQ1, generalQ2, generalQ3, generalQ4, generalQ5, generalQ6, generalQ7, generalQ8, generalQ9, generalQ10, generalQ11, generalQ12];
