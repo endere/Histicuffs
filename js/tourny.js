@@ -1,8 +1,12 @@
 'use strict';
 var tournySize = 8;
 var bannedQuestions = [];
-
+var quizQuestions = [];
 var lineUp = [];
+var pos = 0;
+
+
+
 function generateCharacters(){
   for (var i = 0; i < characters.length; i++){
     var person = new Character(characters[i]);
@@ -38,7 +42,7 @@ function Question(questions){
   this.answers = [questions[1], questions[2], questions[3], questions[4]];
 };
 
-generateCharacters();
+
 
 function setUpMatches(){
   var chosen = [];
@@ -79,7 +83,8 @@ function tournamentRound(contestents){
     console.log('this is next fight: ' + nextFight[0].name + ' ' + nextFight[1].name);
     console.log(nextFight[0]);
     console.log(nextFight[0].isPlayer);
-    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === true){
+    if (nextFight[0].isPlayer === true || nextFight[1].isPlayer === false){
+      //if this si true
       console.log('next fight ' + nextFight[0].name + nextFight[1].name);
       quiz(nextFight[0],nextFight[1]);
     } else {
@@ -108,7 +113,7 @@ function tournament(){
     var roundOneWinners = tournamentRound(contestents);
     var roundTwoWinners = tournamentRound(roundOneWinners);
     var finalWinner = tournamentRound(roundTwoWinners);
-    console.log('The final victor is: ' + finalWinner[0].name);
+    // console.log('The final victor is: ' + finalWinner[0].name);
   } else if (tournySize === 16){
     var roundOneWinners = tournamentRound(contestents);
     var roundTwoWinners = tournamentRound(roundOneWinners);
@@ -124,7 +129,7 @@ function quiz(fighterA, fighterB){
 function quizQuestionSelect(fighterA, fighterB) {
   console.log('fighterA is ' + fighterA.name );
   console.log('fighter b is ' + fighterB.name);
-  var quizQuestions = [];
+
   while(quizQuestions.length < 2){
     console.log('loooog' + fighterA.questions);
     var choiceA = Math.floor(Math.random() * (fighterA.questions.length));
@@ -152,24 +157,12 @@ function quizQuestionSelect(fighterA, fighterB) {
   //   }else{
   //     quizQuestions.push(generalQuestions[choiceC]);
     // }
-  console.log(quizQuestions);
-  return quizQuestions;
+  console.log(quizQuestions[0].ask);
+  // return quizQuestions;
 }
 
+
 //------------------------------FORM--------------------------------------------
-
-
-function displayQuestions(fighterA, fighterB){
-  var quizQuestions = quizQuestionSelect(fighterA, fighterB);
-  var ulEl = document.getElementById('questionWindow');
-  for (var i = 0; i < quizQuestions.length; i++) {
-    var listItem = document.createElement('li');
-    ulEl.appendChild(listItem);
-    listItem.textContent = quizQuestions[i].ask;
-    finalClicks.push(picturesAll[i].clicks);
-    finalNames.push(picturesAll[i].imgName);
-  }
-};
 
 // function handleSubmit(){
 //   var questionForm = document.getElementById('questionWindow');
@@ -194,5 +187,18 @@ function displayQuestions(fighterA, fighterB){
 //     alert('WRONG.');
 //   }
 // };
-
+generateCharacters();
 tournament();
+console.log('quizQuestions: ', quizQuestions[0].ask);
+var tableEl = document.getElementById('pic-table');
+var rowEl = document.createElement('tr');
+tableEl.appendChild(rowEl);
+var fieldEl = document.createElement('td');
+function runCreateTable(){
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(quizQuestions[0].ask);
+    rowEl.appendChild(fieldEl);
+
+};
+
+runCreateTable();
