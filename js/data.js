@@ -31,6 +31,9 @@ var teddy = ['Teddy Roosevelt', 'img/Teddy.jpg', teddyQ1, teddyQ2, teddyQ3, tedd
 ///
 ///
 ///
+///
+///
+///
 
 var daVinciQ1 = ['What\'s the full name of Da Vinci\'s famous painting, "Mona ____"', 'Lisa', 'Elizabeth', 'the girl next door', 'the disney princess'];
 
