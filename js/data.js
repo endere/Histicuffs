@@ -374,10 +374,6 @@ var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong
 ///
 // Cleopatra Above!
 //
-<<<<<<< HEAD
-var characters = [daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra];
-=======
-//
 
 var harrietQ1 = ['Harriet Tubman is know for her work as an?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
 
@@ -409,4 +405,4 @@ var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ
 //
 var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
 
-var bgImages = ['aztec.jpg', 'giza.jpg', 'mustang.jpg', 'rushmore.jpg']
+var bgImages = ['aztec.jpg', 'giza.jpg', 'mustang.jpg', 'rushmore.jpg'];
