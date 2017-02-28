@@ -374,5 +374,4 @@ var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Bo
 //
 var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
 //
-//
 var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
