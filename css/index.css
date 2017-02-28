@@ -2,6 +2,26 @@ html {
   background-color: #a18667;
 }
 
+.navbar {
+  background-color: #736664;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+body {
+  margin-top: 100px;
+}
+
+.navLinks {
+  display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: black;
+}
+
 h1 {
   text-align: center;
   margin-left: auto;
@@ -50,4 +70,9 @@ label {
 
 #right-roster {
   float: right;
+}
+
+.rosterImgs {
+  width: 150px;
+  height: 150px;
 }
