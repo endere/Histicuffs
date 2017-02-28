@@ -9,7 +9,7 @@ var quizLength = 0;
 var questionRepeats = 0;
 var health = 5;
 var remaining = [];
-
+var counter = 0;
 function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId){
   var element = document.createElement(tagType);
   element.setAttribute(tagIdentifier, tagIdentifiername);
@@ -25,7 +25,6 @@ function generateCharacters(){
     var person = new Character(characters[i]);
     person.makeQuestions(person.questions);
     lineUp.push(person);
-    console.log('lineup' + lineUp.length);
   }
 }
 function Character(character){
@@ -63,7 +62,6 @@ generateCharacters();
 function setUpMatches(){
   var chosen = [];
   var contestents = [];
-  console.log('the length is ' + lineUp.length);
   while (chosen.length < tournySize){
     var selected = Math.floor(Math.random() * lineUp.length);
     if (chosen.includes(selected)){
@@ -82,10 +80,8 @@ function setUpMatches(){
 function npcFight(fighterA, fighterB){
   var winSelect = Math.floor(Math.random() * 2);
   if (winSelect === 0){
-    console.log('Fighter A wins!');
     return fighterA;
   } else if (winSelect === 1){
-    console.log('Fighter B wins!');
     return fighterB;
   }
 }
@@ -101,7 +97,6 @@ function tournamentRound(contestents){
     while (nextFight.length < 2){
       nextFight.push(contestents.shift());
     }
-    console.log('this is next fight: ' + nextFight[0].name + ' and ' + nextFight[1].name);
     if (nextFight[0].isPlayer === true){
       // quiz(nextFight[0],nextFight[1]);
       playerFight.push(nextFight[0]);
@@ -138,7 +133,6 @@ function quiz(fighterA, fighterB){
   quizQuestions = quizQuestionSelect(fighterA, fighterB);
   holder = document.getElementById('form');
   quizLength = quizQuestions.length;
-  console.log('quizlength is ' + quizLength);
   console.log(quizQuestions);
   questionRepeats = 0;
   if (document.getElementById('answerHolder')){
@@ -157,6 +151,12 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
     var nextQuestion = quizQuestions.shift(0);
     createElement('legend', 'id', 'ask', nextQuestion.ask, document.getElementById('fieldSet'));
     var answersLength = nextQuestion.answers.length;
+    console.log(nextQuestion.ask);
+    console.log('proceeding into loop...');
+    console.log(nextQuestion.answers[0]);
+    console.log(nextQuestion.answers[0]);
+    console.log(nextQuestion.answers[0]);
+    console.log(nextQuestion.answers[0]);
     for (var j = 0; j < answersLength; j++) {
       var number = Math.floor(Math.random() * (answersLength - j));
       var nextAnswer = nextQuestion.answers.splice(number, 1);
@@ -167,19 +167,17 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
         document.getElementById('answer' + j).setAttribute('id','correct');
       }
     }
-  } else if (health > 0){
+    counter += 1;
+    console.log('counter is ' + counter);
+    console.log(nextQuestion.correct);
+  } else {
     tournamentRound(remaining);
-  } else if (health === 0){
-    alert('game over');
   }
 }
 function quizQuestionSelect(fighterA, fighterB) {
-  console.log('fighterA is ' + fighterA.name );
-  console.log('fighter b is ' + fighterB.name);
   while(quizQuestions.length < 2){
     var choiceA = Math.floor(Math.random() * (fighterA.questions.length));
     if(quizQuestions.indexOf(fighterA.questions[choiceA]) !== -1 || bannedQuestions.indexOf(fighterA.questions[choiceA]) !== -1){
-      console.log('rerolling');
     }else{
       quizQuestions.push(fighterA.questions[choiceA]);
     }
@@ -187,7 +185,6 @@ function quizQuestionSelect(fighterA, fighterB) {
   while(quizQuestions.length < 4){
     var choiceB = Math.floor(Math.random() * (fighterB.questions.length));
     if(quizQuestions.indexOf(fighterB.questions[choiceB]) !== -1 || bannedQuestions.indexOf(fighterB.questions[choiceB]) !== -1){
-      console.log('rerolling');
     }else{
       quizQuestions.push(fighterB.questions[choiceB]);
       bannedQuestions.push(quizQuestions);
@@ -216,6 +213,9 @@ function handleSubmit(event){
     createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
     health -= 1;
     console.log('health remaining: ' + health);
+    if (health === 0){
+      alert('game over');
+    }
   }
   questionRepeats += 1;
   askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
