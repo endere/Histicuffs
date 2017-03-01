@@ -3,7 +3,6 @@ var tournySize = 8;
 var bannedQuestions = [];
 var quizQuestions = [];
 var lineUp = [];
-var quizQuestions = [];
 var holder = document.getElementById('form');
 var quizLength = 0;
 var questionRepeats = 0;
@@ -154,9 +153,9 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
     console.log(nextQuestion.ask);
     console.log('proceeding into loop...');
     console.log(nextQuestion.answers[0]);
-    console.log(nextQuestion.answers[0]);
-    console.log(nextQuestion.answers[0]);
-    console.log(nextQuestion.answers[0]);
+    console.log(nextQuestion.answers[1]);
+    console.log(nextQuestion.answers[2]);
+    console.log(nextQuestion.answers[3]);
     for (var j = 0; j < answersLength; j++) {
       var number = Math.floor(Math.random() * (answersLength - j));
       var nextAnswer = nextQuestion.answers.splice(number, 1);
@@ -180,6 +179,7 @@ function quizQuestionSelect(fighterA, fighterB) {
     if(quizQuestions.indexOf(fighterA.questions[choiceA]) !== -1 || bannedQuestions.indexOf(fighterA.questions[choiceA]) !== -1){
     }else{
       quizQuestions.push(fighterA.questions[choiceA]);
+      bannedQuestions.push(fighterA.questions[choiceA]);
     }
   }
   while(quizQuestions.length < 4){
@@ -187,7 +187,7 @@ function quizQuestionSelect(fighterA, fighterB) {
     if(quizQuestions.indexOf(fighterB.questions[choiceB]) !== -1 || bannedQuestions.indexOf(fighterB.questions[choiceB]) !== -1){
     }else{
       quizQuestions.push(fighterB.questions[choiceB]);
-      bannedQuestions.push(quizQuestions);
+      bannedQuestions.push(fighterB.questions[choiceB]);
     }
   }
   // while(quizQuestions.length < 5){
@@ -238,4 +238,3 @@ function handleSubmit(event){
 };
 
 setUp();
-//quiz(lineUp[11], lineUp[7]);
