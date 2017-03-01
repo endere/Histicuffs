@@ -1,5 +1,21 @@
 html{
-  background-color: gray;
+  background-color: #d39d5e;
+}
+.titlebar{
+ display: block;
+ width: 1127px;
+ height: 90px;
+ text-align: center;
+ background-color: #736664;
+ margin: auto;
+ border: 5px solid black;
+}
+header{
+  background-color: #736664;
+  padding-bottom: 0px;
+}
+a{
+ line-height: normal;
 }
 
 #code{
@@ -17,4 +33,44 @@ html{
   display: block;
   margin: auto;
   width: 1121px;
+}
+/*#space{
+  display: inline-block;
+  width: 259px;
+}*/
+#us{
+  display: block;;
+  margin: auto;
+  width: 1127px;
+  height: 800px;
+  border: 5px solid black;
+  border-top: none;
+}
+img{
+  padding: 0;
+  margin: 0;
+}
+
+#james{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
+}
+
+#isak{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
+}
+
+#erik{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
+}
+
+#enrique{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
 }
