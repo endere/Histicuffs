@@ -8,12 +8,14 @@ var quizLength = 0;
 var questionRepeats = 0;
 var health = 5;
 var remaining = [];
-var counter = 0;
+var counter = 0
 var tableElOne = document.getElementById('roundOne');
 var tableElTwo = document.getElementById('roundTwo');
 var tableElThree = document.getElementById('roundThree');
 var tableWinner = document.getElementById('winner');
 var currentRound = 1;
+var correct = 0;
+
 function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId){
   var element = document.createElement(tagType);
   element.setAttribute(tagIdentifier, tagIdentifiername);
@@ -85,6 +87,7 @@ function setUpMatches(){
   for (var i = 0; i < chosen.length; i++) {
     contestents.push(lineUp[chosen[i]]);
   }
+
   for( var i = 0; i < contestents.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(contestents[i].createImage());
@@ -109,9 +112,11 @@ function npcFight(fighterA, fighterB){
 //----------------------------------------------
 function tournamentRound(contestents){
   remaining = [];
+
   var roundTwoWinners = [];
   var roundThreeWinners = [];
   var theWinner = [];
+
   var roundLength = contestents.length / 2;
   var playerFight = [];
   for (var i = 0; i < roundLength; i++){
@@ -119,7 +124,9 @@ function tournamentRound(contestents){
 
     while (nextFight.length < 2){
       nextFight.push(contestents.shift());
+
     }console.log('theeeese are ' + contestents);
+   }
 
     if (nextFight[0].isPlayer === true){
       quiz(nextFight[0],nextFight[1]);
@@ -166,6 +173,7 @@ function tournamentRound(contestents){
     console.log('winner is ', theWinner);
     console.log('tournamentRound remaining ', remaining);
   }
+  quiz(playerFight[0],playerFight[1]);
 }
 //---------------------------------------------
 //This calls upon the set up and then run a different size tourney based upon how many characters are selected to participate. 2-4-8-16
@@ -192,6 +200,15 @@ function setUp(){
 //    fieldEl.textContent = contestants[i].name ;
 //    tableElOne.appendChild(fieldEl);
 //  }
+
+function setUp(){
+  var contestents = setUpMatches();
+  chooseCharacter(contestents);
+}
+function chooseCharacter(contestents){
+  contestents[2].isPlayer = true;
+  tournamentRound(contestents);
+}
 //----------------------------------------------
 // This is what runs the player quiz the first function sets the quiz up and calls upon quiz question select to select 5 questions then initiates the askAQuestion function which displays the question and its answers in a form. Recieves input from the player processes correct and incorect answers and loops back itself up to 5 times or until the player has run out of chances
 //------------------------------------
@@ -277,12 +294,15 @@ function handleSubmit(event){
 
   if(event.target.id === 'correct'){
     createElement('div', 'class', 'result', 'Correct!', document.getElementById('answerHolder'));
+    correct += 1;
+    console.log('this many correct ' + correct);
   } else {
     createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
     health -= 1;
     console.log('health remaining: ' + health);
     if (health === 0){
-      alert('game over');
+      alert('Game Over! you got ' + correct + ' questions out of ' + counter + ' correct!');
+      window.location = 'lose.html';
     }
   }
   questionRepeats += 1;

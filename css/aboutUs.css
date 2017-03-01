@@ -50,27 +50,47 @@ img{
   padding: 0;
   margin: 0;
 }
+.ourPictures{
+  display: inline-block;
+  width: 272px;
+  height: 800px;
+  border: 2px solid black;
+}
 
+#jamesHolder{
+  margin-left: 5px;
+}
 #james{
   display: inline-block;
-  width: 278px;
+  width: 272px;
   height: 250px;
+  border-bottom: 5px solid black;
 }
 
 #isak{
   display: inline-block;
-  width: 278px;
+  width: 272px;
   height: 250px;
+  border-bottom: 5px solid black;
 }
 
 #erik{
   display: inline-block;
-  width: 278px;
+  width: 272px;
   height: 250px;
+  border-bottom: 5px solid black;
 }
 
 #enrique{
   display: inline-block;
-  width: 278px;
+  width: 272px;
   height: 250px;
+  border-bottom: 5px solid black;
+}
+
+.info{
+  font-size: 20px;
+  margin-left: 3px;
+  margin-right: 3px;
+  text-align: center;
 }
