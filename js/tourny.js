@@ -1,4 +1,5 @@
 'use strict';
+
 var tournySize = 8;
 var bannedQuestions = [];
 var quizQuestions = [];
@@ -8,6 +9,10 @@ var quizLength = 0;
 var questionRepeats = 0;
 var health = 5;
 var remaining = [];
+
+var roundCounter = 0;
+var score = 0;
+
 var counter = 0
 var tableElOne = document.getElementById('roundOne');
 var tableElTwo = document.getElementById('roundTwo');
@@ -87,13 +92,13 @@ function setUpMatches(){
   for (var i = 0; i < chosen.length; i++) {
     contestents.push(lineUp[chosen[i]]);
   }
-
   for( var i = 0; i < contestents.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(contestents[i].createImage());
     tableElOne.appendChild(fieldEl);
   }
   contestents[0].isPlayer = true;
+
   return contestents;
 }
 ////------------------------------------------
@@ -112,10 +117,10 @@ function npcFight(fighterA, fighterB){
 //----------------------------------------------
 function tournamentRound(contestents){
   remaining = [];
-
   var roundTwoWinners = [];
   var roundThreeWinners = [];
   var theWinner = [];
+
 
   var roundLength = contestents.length / 2;
   var playerFight = [];
@@ -125,8 +130,10 @@ function tournamentRound(contestents){
     while (nextFight.length < 2){
       nextFight.push(contestents.shift());
 
+    }
     }console.log('theeeese are ' + contestents);
    }
+
 
     if (nextFight[0].isPlayer === true){
       quiz(nextFight[0],nextFight[1]);
@@ -145,6 +152,7 @@ function tournamentRound(contestents){
       console.log('thee winner ' , winner);
     }
   }
+
   console.log(remaining.slice());
   // quiz(playerFight[0],playerFight[1]);
   currentRound++;
@@ -178,6 +186,12 @@ function tournamentRound(contestents){
 //---------------------------------------------
 //This calls upon the set up and then run a different size tourney based upon how many characters are selected to participate. 2-4-8-16
 //-----------------------------------------------
+
+function setUp(){
+  var contestents = setUpMatches();
+  chooseCharacter(contestents);
+}
+
 var firstRound = [];
 function setUp(){
   var contestents = setUpMatches();
@@ -225,7 +239,7 @@ function quiz(fighterA, fighterB){
   askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
 }
 
-function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
+function askAQuestion(quizQuestions, holder, quizLength, questionRepeats){
   if (questionRepeats < quizLength){
     if (document.getElementById('fieldSet')){
       document.getElementById('fieldSet').parentNode.removeChild(document.getElementById('fieldSet'));
@@ -250,8 +264,6 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
         document.getElementById('answer' + j).setAttribute('id','correct');
       }
     }
-    counter += 1;
-    console.log('counter is ' + counter);
     console.log(nextQuestion.correct);
   } else {
     console.log('REMAINING ' , remaining);
@@ -294,8 +306,11 @@ function handleSubmit(event){
 
   if(event.target.id === 'correct'){
     createElement('div', 'class', 'result', 'Correct!', document.getElementById('answerHolder'));
+
+    score += 1;
     correct += 1;
     console.log('this many correct ' + correct);
+
   } else {
     createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
     health -= 1;
