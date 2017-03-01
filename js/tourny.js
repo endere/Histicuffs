@@ -3,13 +3,14 @@ var tournySize = 8;
 var bannedQuestions = [];
 var quizQuestions = [];
 var lineUp = [];
-var quizQuestions = [];
 var holder = document.getElementById('form');
 var quizLength = 0;
 var questionRepeats = 0;
 var health = 5;
 var remaining = [];
-
+var counter = 0;
+var round = 1;
+var roundTables = ['roundOne', 'roundTwo', 'roundThree', 'winner'];
 function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId){
   var element = document.createElement(tagType);
   element.setAttribute(tagIdentifier, tagIdentifiername);
@@ -25,7 +26,6 @@ function generateCharacters(){
     var person = new Character(characters[i]);
     person.makeQuestions(person.questions);
     lineUp.push(person);
-    console.log('lineup' + lineUp.length);
   }
 }
 function Character(character){
@@ -62,20 +62,20 @@ generateCharacters();
 
 function setUpMatches(){
   var chosen = [];
-  var contestents = [];
-  console.log('the length is ' + lineUp.length);
+  var contestants = [];
   while (chosen.length < tournySize){
     var selected = Math.floor(Math.random() * lineUp.length);
-    console.log(selected);
     if (chosen.includes(selected)){
     } else {
       chosen.push(selected);
     }
   }
   for (var i = 0; i < chosen.length; i++) {
-    contestents.push(lineUp[chosen[i]]);
+    contestants.push(lineUp[chosen[i]]);
   }
-  return contestents;
+  console.log('contestants are ' + contestants);
+  return contestants;
+
 }
 ////------------------------------------------
 // This runs if niether character is the player.
@@ -83,26 +83,26 @@ function setUpMatches(){
 function npcFight(fighterA, fighterB){
   var winSelect = Math.floor(Math.random() * 2);
   if (winSelect === 0){
-    console.log('Fighter A wins!');
     return fighterA;
   } else if (winSelect === 1){
-    console.log('Fighter B wins!');
     return fighterB;
   }
 }
 //---------------------------------------
 // This function pits two characters against each other and hold the framework for the tournment round. Also checks if either character is the player in which case it initiates a quiz otherwise it calls upon the npc fight.
 //----------------------------------------------
-function tournamentRound(contestents){
+function tournamentRound(contestants){
   remaining = [];
-  var roundLength = contestents.length / 2;
+  var roundLength = contestants.length / 2;
+  // for i < roumdlength
+  //   { create element (haracter src, append it to rounddivelement(id round))}
+  //   round += 1 //out of for loop
   var playerFight = [];
   for (var i = 0; i < roundLength; i++){
     var nextFight = [];
     while (nextFight.length < 2){
-      nextFight.push(contestents.shift());
+      nextFight.push(contestants.shift());
     }
-    console.log('this is next fight: ' + nextFight[0].name + ' and ' + nextFight[1].name);
     if (nextFight[0].isPlayer === true){
       // quiz(nextFight[0],nextFight[1]);
       playerFight.push(nextFight[0]);
@@ -117,22 +117,32 @@ function tournamentRound(contestents){
       var winner = npcFight(nextFight[0], nextFight[1]);
       remaining.push(winner);
     }
+    console.log('the contestants are' + contestants);
   }
+
   quiz(playerFight[0],playerFight[1]);
 }
 //---------------------------------------------
 //This calls upon the set up and then run a different size tourney based upon how many characters are selected to participate. 2-4-8-16
 //-----------------------------------------------
-
+var tableEl = document.getElementById('roundOne');
 function setUp(){
-  var contestents = setUpMatches();
-  console.log(contestents);
-  chooseCharacter(contestents);
+  var contestants = setUpMatches();
+  chooseCharacter(contestants);
 }
-function chooseCharacter(contestents){
-  contestents[2].isPlayer = true;
-  tournamentRound(contestents);
+function chooseCharacter(contestants){
+  console.log('theez are ' + characters[contestants[0]]);
+  for( var i = 0; i < contestants.length; i++){
+    var fieldEl = document.createElement('td');
+    fieldEl.textContent = contestants[i].name ;
+    tableEl.appendChild(fieldEl);
+  }
+  tournamentRound(contestants);
 }
+//gotta change the textContent to get element, need to add actual image urls
+// contestants is the array of 8 char objects w/ imgs contestants[i].src is image in for loop
+// click event need to make a character isPlayer to true contestant[i].src, start tournament round
+
 //----------------------------------------------
 // This is what runs the player quiz the first function sets the quiz up and calls upon quiz question select to select 5 questions then initiates the askAQuestion function which displays the question and its answers in a form. Recieves input from the player processes correct and incorect answers and loops back itself up to 5 times or until the player has run out of chances
 //------------------------------------
@@ -140,6 +150,7 @@ function quiz(fighterA, fighterB){
   quizQuestions = quizQuestionSelect(fighterA, fighterB);
   holder = document.getElementById('form');
   quizLength = quizQuestions.length;
+  console.log(quizQuestions);
   questionRepeats = 0;
   if (document.getElementById('answerHolder')){
     document.getElementById('answerHolder').parentNode.removeChild(document.getElementById('answerHolder'));
@@ -157,6 +168,12 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
     var nextQuestion = quizQuestions.shift(0);
     createElement('legend', 'id', 'ask', nextQuestion.ask, document.getElementById('fieldSet'));
     var answersLength = nextQuestion.answers.length;
+    console.log(nextQuestion.ask);
+    console.log('proceeding into loop...');
+    console.log(nextQuestion.answers[0]);
+    console.log(nextQuestion.answers[1]);
+    console.log(nextQuestion.answers[2]);
+    console.log(nextQuestion.answers[3]);
     for (var j = 0; j < answersLength; j++) {
       var number = Math.floor(Math.random() * (answersLength - j));
       var nextAnswer = nextQuestion.answers.splice(number, 1);
@@ -167,34 +184,28 @@ function askAQuestion(quizQuestions,holder,quizLength,questionRepeats){
         document.getElementById('answer' + j).setAttribute('id','correct');
       }
     }
-  } else if (health > 0){
+    counter += 1;
+    console.log('counter is ' + counter);
+    console.log(nextQuestion.correct);
+  } else {
     tournamentRound(remaining);
-  } else if (health === 0){
-    alert('game over');
   }
 }
 function quizQuestionSelect(fighterA, fighterB) {
-  console.log('fighterA is ' + fighterA.name );
-  console.log('fighter b is ' + fighterB.name);
-
   while(quizQuestions.length < 2){
-    console.log('loooog' + fighterA.questions);
     var choiceA = Math.floor(Math.random() * (fighterA.questions.length));
     if(quizQuestions.indexOf(fighterA.questions[choiceA]) !== -1 || bannedQuestions.indexOf(fighterA.questions[choiceA]) !== -1){
-      console.log('rerolling');
     }else{
       quizQuestions.push(fighterA.questions[choiceA]);
-      console.log(choiceA, fighterA.questions[choiceA]);
+      bannedQuestions.push(fighterA.questions[choiceA]);
     }
   }
   while(quizQuestions.length < 4){
     var choiceB = Math.floor(Math.random() * (fighterB.questions.length));
     if(quizQuestions.indexOf(fighterB.questions[choiceB]) !== -1 || bannedQuestions.indexOf(fighterB.questions[choiceB]) !== -1){
-      console.log('rerolling');
     }else{
       quizQuestions.push(fighterB.questions[choiceB]);
-      bannedQuestions.push(quizQuestions);
-      return quizQuestions;
+      bannedQuestions.push(fighterB.questions[choiceB]);
     }
   }
   // while(quizQuestions.length < 5){
@@ -204,8 +215,8 @@ function quizQuestionSelect(fighterA, fighterB) {
   //   }else{
   //     quizQuestions.push(generalQuestions[choiceC]);
     // }
-  console.log(quizQuestions[0].ask);
   // return quizQuestions;
+  return quizQuestions;
 }
 
 //------------------------------FORM--------------------------------------------
@@ -220,6 +231,9 @@ function handleSubmit(event){
     createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
     health -= 1;
     console.log('health remaining: ' + health);
+    if (health === 0){
+      alert('game over');
+    }
   }
   questionRepeats += 1;
   askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
@@ -242,5 +256,3 @@ function handleSubmit(event){
 };
 
 setUp();
-//quiz(lineUp[11], lineUp[7]);
-

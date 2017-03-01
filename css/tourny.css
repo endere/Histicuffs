@@ -1,6 +1,6 @@
 body{
-  background-image: url("../img/bgimages/aztec.jpg");
-background-size: cover;
+  /*background-image: url("../img/bgimages/aztec.jpg");
+background-size: cover;*/
 }
 
 .titlebar{
@@ -35,26 +35,88 @@ header {
 .bracket{
   display: block;
   background-image: url("../img/bgimages/bracket.png");
-  background-size: cover;
-  height: 1000px;
-  width: auto;
+  background-repeat: no-repeat;
+  height: 2000px;
+  width: 1060px;
   text-align: center;
-
-
-
+  margin-left:13%;
+  margin-right: auto;
 
 }
 
-.roundOne{
+#roundOne{
   background-color: red;
   margin-bottom: 200px;
+  width: 850px;
+  height: 120px;
 
+  display: block;
+  text-align: center;
+  position:absolute;
+  top: 650px;
+  left:230px;
+
+}
+
+.roundTwo{
+  background-color: purple;
+  margin-bottom: 200px;
+  width: 650px;
+  height: 120px;
+
+  display: block;
+  text-align: center;
+  position:absolute;
+  top: 525px;
+  left:325px;
+
+}
+
+.roundThree{
+  background-color: green;
+  margin-bottom: 200px;
+  width: 650px;
+  height: 160px;
+
+  display: block;
+  text-align: center;
+  position:absolute;
+  top: 360px;
+  left:325px;
+
+}
+
+.winner{
+  background-color: orange;
+  margin-bottom: 200px;
+  width: 220px;
+  height: 140px;
+
+  display: block;
+  text-align: center;
+  position:absolute;
+  top: 180px;
+  left:545px;
+
+}
+
+.p1p2{
+  background-color: yellow;
+  margin-bottom: 200px;
+  width: 350px;
+  height: 180px;
+
+  display: block;
+  text-align: center;
+  position:absolute;
+  top: 850px;
+  left:505px;
 }
 
 .answerButton{
-  max-width: 100px;
-  max-height: 50px;
-  background-color: green;
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
   border: 1px solid;
   margin: 5px;
 }
