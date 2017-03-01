@@ -38,11 +38,39 @@ a{
   display: inline-block;
   width: 259px;
 }*/
-#james{
+#us{
   display: block;;
   margin: auto;
   width: 1127px;
   height: 800px;
   border: 5px solid black;
   border-top: none;
+}
+img{
+  padding: 0;
+  margin: 0;
+}
+
+#james{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
+}
+
+#isak{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
+}
+
+#erik{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
+}
+
+#enrique{
+  display: inline-block;
+  width: 278px;
+  height: 250px;
 }

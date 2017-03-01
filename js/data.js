@@ -90,7 +90,7 @@ var ghandiQ11 = ['Which book was worked on by Ghandi?', 'Light of India', 'The l
 
 var ghandiQ12 = ['Ghandi confessed his guilt for _____. Promising to never do the act again.', 'Stealing', 'Drinking', 'Setting random fires', 'Having an Affair'];
 
-var ghandi = ['Mahatma Ghandi', 'IMG URL', ghandiQ1, ghandiQ2, ghandiQ3, ghandiQ4, ghandiQ5, ghandiQ6, ghandiQ7, ghandiQ8, ghandiQ9, ghandiQ10, ghandiQ11, ghandiQ12];
+var ghandi = ['Mahatma Ghandi', 'img/gandhi.jpg', ghandiQ1, ghandiQ2, ghandiQ3, ghandiQ4, ghandiQ5, ghandiQ6, ghandiQ7, ghandiQ8, ghandiQ9, ghandiQ10, ghandiQ11, ghandiQ12];
 ///
 /// Ghandi Above!
 ////
@@ -122,7 +122,7 @@ var darwinQ12 = ['Darwin took a cruise on which ship?', 'The Beagle', 'The Tutto
 //
 //
 //
-var darwin = ['Charles Darwin', 'IMG URL', darwinQ1, darwinQ2, darwinQ3, darwinQ4, darwinQ5, darwinQ6, darwinQ7, darwinQ8, darwinQ9, darwinQ10, darwinQ11, darwinQ12];
+var darwin = ['Charles Darwin', 'img/darwin.jpg', darwinQ1, darwinQ2, darwinQ3, darwinQ4, darwinQ5, darwinQ6, darwinQ7, darwinQ8, darwinQ9, darwinQ10, darwinQ11, darwinQ12];
 /////
 /// Darwin Above!
 ///
@@ -153,7 +153,7 @@ var voltaireQ12 = ['Which of Voltaire\'s books was banned upon publishing?', 'Ca
 //
 //
 //
-var voltaire = ['Voltaire', 'imgURL', voltaireQ1, voltaireQ2, voltaireQ3, voltaireQ4, voltaireQ5, voltaireQ6, voltaireQ7, voltaireQ8, voltaireQ9, voltaireQ10, voltaireQ11, voltaireQ12];
+var voltaire = ['Voltaire', 'img/voltaire.jpg', voltaireQ1, voltaireQ2, voltaireQ3, voltaireQ4, voltaireQ5, voltaireQ6, voltaireQ7, voltaireQ8, voltaireQ9, voltaireQ10, voltaireQ11, voltaireQ12];
 //
 // Voltaire Above!
 //
@@ -184,7 +184,7 @@ var joanOfArcQ12 = ['Joan of Arc was brought ot trial for what?', 'Heresy', 'War
 //
 //
 //
-var joanOfArc = ['Joan of Arc', 'imgURL', joanOfArcQ1, joanOfArcQ2, joanOfArcQ3, joanOfArcQ4, joanOfArcQ5, joanOfArcQ6, joanOfArcQ7, joanOfArcQ8, joanOfArcQ9, joanOfArcQ10, joanOfArcQ11, joanOfArcQ12];
+var joanOfArc = ['Joan of Arc', 'img/joan.jpg', joanOfArcQ1, joanOfArcQ2, joanOfArcQ3, joanOfArcQ4, joanOfArcQ5, joanOfArcQ6, joanOfArcQ7, joanOfArcQ8, joanOfArcQ9, joanOfArcQ10, joanOfArcQ11, joanOfArcQ12];
 /////
 /// Joan of Arc Above!!
 ///
@@ -216,7 +216,7 @@ var maoZedongQ12 = ['Mao Zedong had how many marriages?', '4', '1', '2', '3'];
 //
 //
 //
-var maoZedong = ['Mao Zedong', 'imgURL', maoZedongQ1, maoZedongQ2, maoZedongQ3, maoZedongQ4, maoZedongQ5, maoZedongQ6, maoZedongQ7, maoZedongQ8, maoZedongQ9, maoZedongQ10, maoZedongQ11, maoZedongQ12];
+var maoZedong = ['Mao Zedong', 'img/mao.jpg', maoZedongQ1, maoZedongQ2, maoZedongQ3, maoZedongQ4, maoZedongQ5, maoZedongQ6, maoZedongQ7, maoZedongQ8, maoZedongQ9, maoZedongQ10, maoZedongQ11, maoZedongQ12];
 //
 /// Mao Zedong Above!
 //
@@ -248,7 +248,7 @@ var edgarAllanPoeQ12 = ['Edgar Allan Poe\'s death was caused by what?', 'Unkown 
 //
 //
 
-var edgarAllanPoe = ['Edgar Allan Poe', 'imgURL', edgarAllanPoeQ1, edgarAllanPoeQ2, edgarAllanPoeQ3, edgarAllanPoeQ4, edgarAllanPoeQ5, edgarAllanPoeQ6, edgarAllanPoeQ7, edgarAllanPoeQ8, edgarAllanPoeQ9, edgarAllanPoeQ10, edgarAllanPoeQ11, edgarAllanPoeQ12];
+var edgarAllanPoe = ['Edgar Allan Poe', 'img/edgar.jpg', edgarAllanPoeQ1, edgarAllanPoeQ2, edgarAllanPoeQ3, edgarAllanPoeQ4, edgarAllanPoeQ5, edgarAllanPoeQ6, edgarAllanPoeQ7, edgarAllanPoeQ8, edgarAllanPoeQ9, edgarAllanPoeQ10, edgarAllanPoeQ11, edgarAllanPoeQ12];
 ///
 /// Edgar Allan Poe Above!
 ///
@@ -280,7 +280,7 @@ var marieCurieQ12 = ['What was Marie Curie\'s husband\'s name?', 'Pierre', 'Fran
 ///
 //
 
-var marieCurie = ['Marie Curie', 'IMG URL', marieCurieQ1, marieCurieQ2, marieCurieQ3, marieCurieQ4, marieCurieQ5, marieCurieQ6, marieCurieQ7, marieCurieQ8, marieCurieQ9, marieCurieQ10, marieCurieQ11, marieCurieQ12];
+var marieCurie = ['Marie Curie', 'img/curie.jpg', marieCurieQ1, marieCurieQ2, marieCurieQ3, marieCurieQ4, marieCurieQ5, marieCurieQ6, marieCurieQ7, marieCurieQ8, marieCurieQ9, marieCurieQ10, marieCurieQ11, marieCurieQ12];
 ///
 /// Marie Curie Above!
 //
@@ -309,7 +309,7 @@ var hannibalQ11 = ['What war did Hannibal fight in?', 'The second Punic-war', 'T
 
 var hannibalQ12 = ['What did Hannibal\'s final letter before his death say?', 'Let us relieve the Romans from the anxiety they have so long experienced...', 'I\'m all out of bubblegum', 'I came, I saw, I conquered', 'Those who defy us shall bend their knees'];
 
-var hannibal = ['Hannibal', 'imgURL', hannibalQ1, hannibalQ2, hannibalQ3, hannibalQ4, hannibalQ5, hannibalQ6, hannibalQ7, hannibalQ8, hannibalQ9, hannibalQ10, hannibalQ11, hannibalQ12];
+var hannibal = ['Hannibal', 'img/hannibal.jpg', hannibalQ1, hannibalQ2, hannibalQ3, hannibalQ4, hannibalQ5, hannibalQ6, hannibalQ7, hannibalQ8, hannibalQ9, hannibalQ10, hannibalQ11, hannibalQ12];
 //
 // Hannibal Above!
 //
@@ -340,35 +340,8 @@ var cleopatraQ11 = ['Cleopatra had how many children?', '6 children', 'None', '2
 var cleopatraQ12 = ['Cleopatra\'s death is said to have been what?', 'A suicide', 'Brutal', 'A murder', 'An accident'];
 //
 //
-var cleopatra = ['Cleopatra', 'imgURL', cleopatraQ1, cleopatraQ2, cleopatraQ3, cleopatraQ4, cleopatraQ5, cleopatraQ6, cleopatraQ7, cleopatraQ8, cleopatraQ9, cleopatraQ10, cleopatraQ11, cleopatraQ12];
+var cleopatra = ['Cleopatra', 'img/cleopatra.jpg', cleopatraQ1, cleopatraQ2, cleopatraQ3, cleopatraQ4, cleopatraQ5, cleopatraQ6, cleopatraQ7, cleopatraQ8, cleopatraQ9, cleopatraQ10, cleopatraQ11, cleopatraQ12];
 
-var harrietQ1 = ['Harriet Tubman is know for her work as an?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
-
-var harrietQ2 = ['Harriet Tubman\'s birth name was ?', 'Araminta Ross', 'Neta-Lee Hershlag', 'Harriet Beecher Stowe', 'Emily Robinson'];
-
-var harrietQ3 = ['A severe blow to the head from a 2 pound weight at the age of 12 gave Harriet Tubman what condition?', 'Narcolepsy', 'Dementia', 'Amnesia', 'Epilepsy'];
-
-var harrietQ4 = ['What network did Harriet Tubman use to free hundreds of slaves?', 'The Underground Railroad', 'The Secret Tunnel', 'The Hidden Highway', 'The Grand Theft Orchestra'];
-
-var harrietQ5 = ['Harriet Tubman will be appearing on the american __ dollar bill.', '20','5','10','50'];
-
-var harrietQ6 = ['What event catalyzed Harriet Tubman running away from slavery?', 'The sickness and death of her owner.', 'A sleeping guard', 'A cart crash', 'A heart to heart with her brother'];
-
-var harrietQ7 = ['In what year was Tubman born?', '1822', '1992', '1787', '1830'];
-
-var harrietQ8 = ['In what year did Tubman die?', '1913', '2002', '1930', '1900'];
-
-var harrietQ9 = ['In what state was Harriet born?', 'Maryland', 'Georgia', 'Alabama', 'New York'];
-
-var harrietQ10 = ['How many children did Harriet Tubman have?', '1', '2', '7','12'];
-
-var harrietQ11 = ['What was the name of Harriet Tubman\'s daughter?', 'Gertie', 'Rose' ,'Harriet jr', 'Sally'];
-
-var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Boston', 'New York', 'Chicago'];
-//
-//
-//
-var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
 ///
 // Cleopatra Above!
 //
@@ -399,7 +372,8 @@ var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Bo
 //
 //
 //
-var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
+var harrietTubman = ['Harriet Tubman', 'img/harriet.jpg', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
+//
 //
 var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
 
