@@ -1,0 +1,21 @@
+html{
+  background-color: grey;
+}
+
+
+img#lose{
+  display:block;
+    margin:auto;
+    border: 1px solid black;
+  }
+
+p{
+  text-align: center;
+  font-size: 30px;
+}
+a{
+  background-color: blue;
+}
+.links{
+  background-color: #736664;
+}
