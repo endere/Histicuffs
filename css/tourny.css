@@ -44,7 +44,7 @@ header {
 
 }
 
-.roundOne{
+#roundOne{
   background-color: red;
   margin-bottom: 200px;
   width: 850px;
