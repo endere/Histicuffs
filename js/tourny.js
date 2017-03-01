@@ -9,8 +9,7 @@ var questionRepeats = 0;
 var health = 5;
 var remaining = [];
 var counter = 0;
-var round = 1;
-var roundTables = ['roundOne', 'roundTwo', 'roundThree', 'winner'];
+var correct = 0;
 function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId){
   var element = document.createElement(tagType);
   element.setAttribute(tagIdentifier, tagIdentifiername);
@@ -62,7 +61,7 @@ generateCharacters();
 
 function setUpMatches(){
   var chosen = [];
-  var contestants = [];
+  var contestents = [];
   while (chosen.length < tournySize){
     var selected = Math.floor(Math.random() * lineUp.length);
     if (chosen.includes(selected)){
@@ -71,11 +70,9 @@ function setUpMatches(){
     }
   }
   for (var i = 0; i < chosen.length; i++) {
-    contestants.push(lineUp[chosen[i]]);
+    contestents.push(lineUp[chosen[i]]);
   }
-  console.log('contestants are ' + contestants);
-  return contestants;
-
+  return contestents;
 }
 ////------------------------------------------
 // This runs if niether character is the player.
@@ -91,17 +88,14 @@ function npcFight(fighterA, fighterB){
 //---------------------------------------
 // This function pits two characters against each other and hold the framework for the tournment round. Also checks if either character is the player in which case it initiates a quiz otherwise it calls upon the npc fight.
 //----------------------------------------------
-function tournamentRound(contestants){
+function tournamentRound(contestents){
   remaining = [];
-  var roundLength = contestants.length / 2;
-  // for i < roumdlength
-  //   { create element (haracter src, append it to rounddivelement(id round))}
-  //   round += 1 //out of for loop
+  var roundLength = contestents.length / 2;
   var playerFight = [];
   for (var i = 0; i < roundLength; i++){
     var nextFight = [];
     while (nextFight.length < 2){
-      nextFight.push(contestants.shift());
+      nextFight.push(contestents.shift());
     }
     if (nextFight[0].isPlayer === true){
       // quiz(nextFight[0],nextFight[1]);
@@ -117,32 +111,21 @@ function tournamentRound(contestants){
       var winner = npcFight(nextFight[0], nextFight[1]);
       remaining.push(winner);
     }
-    console.log('the contestants are' + contestants);
   }
-
   quiz(playerFight[0],playerFight[1]);
 }
 //---------------------------------------------
 //This calls upon the set up and then run a different size tourney based upon how many characters are selected to participate. 2-4-8-16
 //-----------------------------------------------
-var tableEl = document.getElementById('roundOne');
-function setUp(){
-  var contestants = setUpMatches();
-  chooseCharacter(contestants);
-}
-function chooseCharacter(contestants){
-  console.log('theez are ' + characters[contestants[0]]);
-  for( var i = 0; i < contestants.length; i++){
-    var fieldEl = document.createElement('td');
-    fieldEl.textContent = contestants[i].name ;
-    tableEl.appendChild(fieldEl);
-  }
-  tournamentRound(contestants);
-}
-//gotta change the textContent to get element, need to add actual image urls
-// contestants is the array of 8 char objects w/ imgs contestants[i].src is image in for loop
-// click event need to make a character isPlayer to true contestant[i].src, start tournament round
 
+function setUp(){
+  var contestents = setUpMatches();
+  chooseCharacter(contestents);
+}
+function chooseCharacter(contestents){
+  contestents[2].isPlayer = true;
+  tournamentRound(contestents);
+}
 //----------------------------------------------
 // This is what runs the player quiz the first function sets the quiz up and calls upon quiz question select to select 5 questions then initiates the askAQuestion function which displays the question and its answers in a form. Recieves input from the player processes correct and incorect answers and loops back itself up to 5 times or until the player has run out of chances
 //------------------------------------
@@ -227,12 +210,15 @@ function handleSubmit(event){
 
   if(event.target.id === 'correct'){
     createElement('div', 'class', 'result', 'Correct!', document.getElementById('answerHolder'));
+    correct += 1;
+    console.log('this many correct ' + correct);
   } else {
     createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
     health -= 1;
     console.log('health remaining: ' + health);
     if (health === 0){
-      alert('game over');
+      alert('Game Over! you got ' + correct + ' questions out of ' + counter + ' correct!');
+      window.location = 'lose.html';
     }
   }
   questionRepeats += 1;
