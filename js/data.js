@@ -369,8 +369,6 @@ var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Bo
 //
 //
 var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
-
-var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
 ///
 // Cleopatra Above!
 //
@@ -406,29 +404,3 @@ var harrietTubman = ['Harriet Tubman', 'IMG URL', harrietQ1, harrietQ2, harrietQ
 var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
 
 var bgImages = ['aztec.jpg', 'giza.jpg', 'mustang.jpg', 'rushmore.jpg'];
-
-var generalQ1 = ['The largest pyramid in the world is in:', 'Mexico', 'Egypt', 'Indonesia', 'China'];
-
-var generalQ2 = ['These mysterious ancient objects are attributed to the Olmec civilization.', 'Colossal stone heads', 'Crystal skulls', 'Large stone spheres', 'Golden monkey statues'];
-
-var generalQ3 = ['Which of these is one of the seven wonders of the world?', 'Mausoleum of Halicarnassus', 'Library of Alexandria', 'Great wall of China', 'The temple of Karnak'];
-
-var generalQ4 = ['Which of these states was added to the Union during the Civil War?', 'Nevada', 'Colorado', 'Texas', 'California'];
-
-var generalQ5 = ['In what year did the U.S. enter World War II?', '1941', '1939', '1945', '1940'];
-
-var generalQ6 = ['Edward Teach is better known as the pirate:', 'Blackbeard', 'Bluebeard', 'Long John Silver', 'Robinson Crusoe'];
-
-var generalQ7 = ['The capital city of the Aztec Empire, which is in modern day Mexico City, was originally called what?', 'Tenochtitlan', 'Tikal', 'Cuzco', 'Teotihuacan'];
-
-var generalQ8 = ['Which of the following countries was NOT invaded by the Mongols?', 'France', 'Bulgaria', 'Burma', 'Iraq'];
-
-var generalQ9 = ['Which of these mountains is sacred to Taoists?', 'Wudan Shan', 'Mt Fuji', 'Wutai Shan', 'Mt Everest'];
-
-var generalQ10 = ['Japan\'s Meiji restoration period was known for being:', 'The period of Japan\'s rapid industrailization and adoption of several facets of western culture', 'The period that saw the rise of the first shogunate', 'The period following the Edo period where it took 100 years to repair the damage caused by war', 'A flourishing of new artistic style which took place in the early 1200s'];
-
-var generalQ11 = ['Which of these locations did Bill and Ted not visit?', 'Cairo', 'Orleans', 'Vienna', 'Kassel'];
-
-var generalQ12 = ['Who was the first to write about Atlantis?', 'Plato', 'Aristotle', 'Socrates', 'Homer'];
-
-var generalQuestions = [generalQ1, generalQ2, generalQ3, generalQ4, generalQ5, generalQ6, generalQ7, generalQ8, generalQ9, generalQ10, generalQ11, generalQ12];
