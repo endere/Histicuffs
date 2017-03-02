@@ -191,7 +191,7 @@ function handleSubmit(event){
   event.stopPropagation();
 
   if(event.target.id === 'correct'){
-    createElement('div', 'class', 'result', 'Correct!', document.getElementById('answerHolder'));
+    createElement('div', 'class', 'correct', 'Correct!', document.getElementById('answerHolder'));
     score += 1;
     if (score === 3 && health >= 1) {
       roundOneWinners.unshift(contestents[0]);
@@ -212,7 +212,7 @@ function handleSubmit(event){
       alert('YOU HAVE WON!');
     }
   } else {
-    createElement('div', 'class', 'result', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
+    createElement('div', 'class', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
     health -= 1;
     console.log('health remaining: ' + health);
     if (health === 0){
