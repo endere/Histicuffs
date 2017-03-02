@@ -72,7 +72,7 @@ var ghandiQ2 = ['How did Ghandi die?', 'Assassination', 'Old Age', 'Heart Attack
 
 var ghandiQ3 = ['What was Ghandi famous for?', 'Leader of the Indian Idependence Movement', 'Famous Chef', 'Famous Guru', 'Famous Taibo Instructor'];
 
-var ghandiQ4 = ['At which one of the 4 Inns of Court did Ghandi study law?', 'The Honorable Society of Inner Temple', 'The Honorable Society of Gray]\'s Inn', 'The Honorable Society of Middle Temple', 'The Honorable Society of Inner Lincon\'s'];
+var ghandiQ4 = ['At which one of the 4 Inns of Court did Ghandi study law?', 'The Honorable Society of Inner Temple', 'The Honorable Society of Gray\'s Inn', 'The Honorable Society of Middle Temple', 'The Honorable Society of Inner Lincon\'s'];
 
 var ghandiQ5 = ['In what year did Ghandi marry?', '1883', '1893', '2002', '1920'];
 
@@ -190,7 +190,7 @@ var joanOfArc = ['Joan of Arc', 'img/joan.jpg', joanOfArcQ1, joanOfArcQ2, joanOf
 ///
 //
 
-var maoZedongQ1 = ['What movement did Mao Zedong create in 1966?', 'The cultural revolution', 'The American revolution', 'The Chineses democracy movement', 'The May 4th movement'];
+var maoZedongQ1 = ['What movement did Mao Zedong create in 1966?', 'The cultural revolution', 'The American revolution', 'The Chinese democracy movement', 'The May 4th movement'];
 
 var maoZedongQ2 = ['How did Mao Zedong die?', 'Heart attack', 'Old age', 'Poison', 'Gunshot'];
 
