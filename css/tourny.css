@@ -173,7 +173,10 @@ div.correct{
   float: right;
 }
 div.wrong{
-
+  text-align: center;
+  background-color: red;
+  border:solid;
+  float: right;
 }
 
 #roundOne img{
