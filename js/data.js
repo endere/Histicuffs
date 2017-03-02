@@ -4,7 +4,7 @@ var teddyQ1 = ['Roosevelt\'s Rough riders famously fought in:', 'Cuba', 'Texas',
 
 var teddyQ2 = ['Roosevelt attended which college:', 'Harvard', 'Yale', 'Oxford', 'Cornell'];
 
-var teddyQ3 = ['Both Roosevelts\'s wife and mother famously:', 'Died on the same day', 'Had the same name', 'Hatd each other', 'Were second cousins'];
+var teddyQ3 = ['Both Roosevelts\'s wife and mother famously:', 'Died on the same day', 'Had the same name', 'Hated each other', 'Were second cousins'];
 
 var teddyQ4 = ['Teddy Roosevelt is the only President in American history to:', 'Win both the Medal of Honor and the Nobel Peace Prize', 'Fire his entire security cabinet on the same day', 'Survive four separate public assassination attempts', 'Shoot someone while in office'];
 
@@ -20,7 +20,7 @@ var teddyQ9 = ['Which vocation did Teddy Roosevelt NOT have in his lifetime?', '
 
 var teddyQ10 = ['Teddy Roosevelt was a member of which political party during his presidency?', 'Republican', 'Democratic', 'Whig', 'Federalist'];
 
-var teddyQ11 = ['Teddy Roosevelt was:', 'The youngest person to ever be sworn in as a U.S. President.', 'The first President to serve more than two full terms.', 'The only person who hel the presidency who didn\'t drink.', 'Diagnosed with a pulmonary embolism at birth.'];
+var teddyQ11 = ['Teddy Roosevelt was:', 'The youngest person to ever be sworn in as a U.S. President.', 'The first President to serve more than two full terms.', 'The only person who held the presidency who didn\'t drink.', 'Diagnosed with a pulmonary embolism at birth.'];
 
 var teddyQ12 = ['Which of the following was the name of one of Teddy Roosevelt\'s sons?', 'Kermit', 'Hubert', 'Adolf', 'Percivall'];
 
@@ -244,7 +244,7 @@ var edgarAllanPoeQ10 = ['Edgar Allan Poe married when his wife was what age?', '
 
 var edgarAllanPoeQ11 = ['Edgar Allan Poe\'s only novel is titled what?', 'The Narrative of Arthur Gordon Pym', 'Tamerlane', 'Ender\'s Game', 'Game of Thrones'];
 
-var edgarAllanPoeQ12 = ['Edgar Allan Poe\'s death was caused by what?', 'Unkown reasons', 'Alcohol poisoning', 'Hanging', 'Old Age'];
+var edgarAllanPoeQ12 = ['Edgar Allan Poe\'s death was caused by what?', 'Unknown reasons', 'Alcohol poisoning', 'Hanging', 'Old Age'];
 //
 //
 
@@ -263,13 +263,13 @@ var marieCurieQ4 = ['One of Curie\'s most important discoveries involving radiat
 
 var marieCurieQ5 = ['Marie Curie was born in:', 'Poland', 'France', 'America', 'Belgium'];
 
-var marieCurieQ6 = ['One of Marie Curie\'s contributions to WWI was:', 'The use of X-Ray technology to locate bullets and shrapnel in wounded soldiers.', 'The invention of Depleted Uranium munitions', 'Early conceptualization of nuclear weaponry', 'Suggested to use of Helium instead of Hydrogen in zepplins.'];
+var marieCurieQ6 = ['One of Marie Curie\'s contributions to WWI was:', 'The use of X-Ray technology to locate bullets and shrapnel in wounded soldiers.', 'The invention of Depleted Uranium munitions', 'Early conceptualization of nuclear weaponry', 'Suggestion to use of Helium instead of Hydrogen in zepplins.'];
 
 var marieCurieQ7 = ['Marie Curie was famously quorted as saying:', '"Nothing in life is to be feared, it is only to be understood"', '"There is no law, except the law that there is no law."', '"Imagination is more important than knowledge."', '"Remember to look up at the stars and not down at your feet."'];
 
 var marieCurieQ8 = ['Marie Curie devoted the latter part of her life:', 'To cancer research.', 'To research involving the focused concentration of radiation waves.', 'To fighting childhood obesity', 'To various political reforms.'];
 
-var marieCurieQ9 = ['Marie Curie was NOT', 'The first female scientist to be invited to give the commencement speech at West Point.', 'The first woman in europe to obtain a PHD in a research science.', 'The first woman to ever win a Nobel Prize', 'The first woman professor at Sorbonne.'];
+var marieCurieQ9 = ['Marie Curie was NOT:', 'The first female scientist to be invited to give the commencement speech at West Point.', 'The first woman in europe to obtain a PHD in a research science.', 'The first woman to ever win a Nobel Prize', 'The first woman professor at Sorbonne.'];
 
 var marieCurieQ10 = ['Marie Curie conducted most of her early research in:', 'A shack.', 'A barn.', 'The basement of a theater.', 'The kitchen in her own home.'];
 
@@ -346,7 +346,7 @@ var cleopatra = ['Cleopatra', 'img/cleopatra.jpg', cleopatraQ1, cleopatraQ2, cle
 // Cleopatra Above!
 //
 
-var harrietQ1 = ['Harriet Tubman is know for her work as an?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
+var harrietQ1 = ['Harriet Tubman is know for her work as a(n)?', 'Abolitionist', 'Singer/Songwriter', 'Scream Queen', 'Painter'];
 
 var harrietQ2 = ['Harriet Tubman\'s birth name was ?', 'Araminta Ross', 'Neta-Lee Hershlag', 'Harriet Beecher Stowe', 'Emily Robinson'];
 
@@ -366,7 +366,7 @@ var harrietQ9 = ['In what state was Harriet born?', 'Maryland', 'Georgia', 'Alab
 
 var harrietQ10 = ['How man children did Harriet Tubman have?', '1', '2', '7','12'];
 
-var harrietQ11 = ['What was the name of Harriet Tubman\'s daughter?', 'Gertie', 'Rose' ,'Harriet jr', 'Sally'];
+var harrietQ11 = ['What was the name of Harriet Tubman\'s daughter?', 'Gertie', 'Rose' ,'Harriet Jr', 'Sally'];
 
 var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Boston', 'New York', 'Chicago'];
 //
