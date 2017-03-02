@@ -7,7 +7,7 @@ var lineUp = []; //This is the array for 12 characters that we will choose rando
 var holder = document.getElementById('form');
 var quizLength = 0;
 var questionRepeats = 0;
-var health = 5;
+var health = 3;
 var remaining = []; //Currently not in use, DELETE IF NOT NEEDED BY THURS
 var roundCounter = 0;
 var score = 0;
@@ -149,7 +149,7 @@ function askAQuestion(quizQuestions, holder, quizLength, questionRepeats){
     }
     console.log(nextQuestion.correct);
   } else {
-    tournamentRound(remaining);
+    alert('YOU HAVE WON!');
   }
 }
 function quizQuestionSelect(fighterA, fighterB) {
@@ -181,12 +181,28 @@ function handleSubmit(event){
   if(event.target.id === 'correct'){
     createElement('div', 'class', 'result', 'Correct!', document.getElementById('answerHolder'));
     score += 1;
+    if (score === 3 && health >= 1) {
+      roundOneWinners.unshift(contestents[0]);
+      console.log(roundOneWinners);
+      roundTwoSetup();
+      roundTwoNpcFight();
+
+    }
+    if (score === 6 && health >= 1) {
+      roundTwoWinners.unshift(roundOneWinners[0]);
+      console.log(roundTwoWinners);
+      roundThreeNpcFight();
+    }
+    if (score === 9 && health >= 1) {
+      alert('YOU HAVE WON!');
+    }
   } else {
     createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
     health -= 1;
     console.log('health remaining: ' + health);
     if (health === 0){
       alert('game over');
+      gameOver();
     }
   }
   questionRepeats += 1;
@@ -203,20 +219,40 @@ function roundOneSetup(){
   return contestents;
 }
 
+function roundTwoSetup(){
+  for( var i = 0; i < roundOneWinners.length; i++){
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(roundOneWinners[i].createImage());
+    tableElOne.appendChild(fieldEl);
+  }
+
+}
+
+function roundOneSetup(){
+  for( var i = 0; i < contestents.length; i++){
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(contestents[i].createImage());
+    tableElOne.appendChild(fieldEl);
+  }
+  contestents[0].isPlayer = true;
+  return contestents;
+}
+
 function roundOneNpcFight(){
-  roundOneWinners.push(quiz(contestents[0], contestents[1]));
+  console.log(contestents);
+  quiz(contestents[0], contestents[1]);
   roundOneWinners.push(npcFight(contestents[2], contestents[3]));
   roundOneWinners.push(npcFight(contestents[4], contestents[5]));
   roundOneWinners.push(npcFight(contestents[6], contestents[7]));
 }
 
 function roundTwoNpcFight(){
-  roundTwoWinners.push(quiz(contestents[0], contestents[1]));
-  roundTwoWinners.push(npcFight(contestents[2], contestents[3]));
+  quiz(roundOneWinners[0], roundOneWinners[1]);
+  roundTwoWinners.push(npcFight(roundOneWinners[2], roundOneWinners[3]));
 }
 
 function roundThreeNpcFight(){
-  winners.push(quiz(contestents[0], contestents[1]));
+  quiz(roundTwoWinners[0], roundTwoWinners[1]);
 }
 
 roundOneSetup();
