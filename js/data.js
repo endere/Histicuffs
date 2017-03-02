@@ -59,7 +59,7 @@ var daVinciQ11 = ['About what age was Leonardo when he began his apprenticeship'
 
 var daVinciQ12 = ['What is the Mona Lisa called in Italian?', 'La Gioconda', 'La Mona lisa', 'La Mona Bella', 'La Benois Lisa'];
 
-var daVinci = ['Leonardo Da Vinci','img/leonardo-da-vinci.jpg', daVinciQ1, daVinciQ2, daVinciQ3, daVinciQ4, daVinciQ5, daVinciQ6, daVinciQ7, daVinciQ8, daVinciQ9, daVinciQ10, daVinciQ11, daVinciQ12];
+var daVinci = ['Leonardo Da Vinci','img/daVinci.jpg', daVinciQ1, daVinciQ2, daVinciQ3, daVinciQ4, daVinciQ5, daVinciQ6, daVinciQ7, daVinciQ8, daVinciQ9, daVinciQ10, daVinciQ11, daVinciQ12];
 
 // Leonardo Da Vinci Above!
 //
