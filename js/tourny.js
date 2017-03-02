@@ -223,7 +223,7 @@ function roundTwoSetup(){
   for( var i = 0; i < roundOneWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundOneWinners[i].createImage());
-    tableElOne.appendChild(fieldEl);
+    tableElTwo.appendChild(fieldEl);
   }
 
 }
@@ -232,10 +232,8 @@ function roundThreeSetup(){
   for( var i = 0; i < roundTwoWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundTwoWinners[i].createImage());
-    tableElOne.appendChild(fieldEl);
+    tableElThree.appendChild(fieldEl);
   }
-  contestents[0].isPlayer = true;
-  return contestents;
 }
 
 function roundOneNpcFight(){
