@@ -21,7 +21,7 @@ a{
 }
 
 header {
-  background-color: #a18667;
+  background-color: #736664;
   border: solid;
   padding-bottom: 15px;
 }
@@ -71,8 +71,8 @@ header {
   display: block;
   text-align: center;
   position:absolute;
-  top: 525px;
-  left:325px;
+  top: 500px;
+  left: 296px;
 
 }
 
@@ -86,7 +86,7 @@ header {
   text-align: center;
   position:absolute;
   top: 360px;
-  left:325px;
+  left:405px;
 
 }
 
@@ -124,6 +124,9 @@ header {
   margin-top:10px
   position: normal;
   right: 50px;
+  vertical-align: middle;
+  background-color: gold;
+  fon
 }
 
 .p1p2{
@@ -150,10 +153,13 @@ header {
   box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
   border-radius: 25px;
   vertical-align: middle;
+
 }
 
 div.result{
   text-align: center;
+  background-color: green;
+  border:solid;
 }
 
 #roundOne img{
@@ -161,6 +167,21 @@ div.result{
   height: 90px;
   width: 75px;
   marigin-left: 15px;
-  margin-right: 12px;
+  margin-right: 13px;
 
+}
+#roundTwo img{
+  border: solid;
+  height: 110px;
+  width: 95px;
+  marigin-left: 80px;
+  margin-right: 80px;
+}
+
+#roundThree img{
+  border: solid;
+  height: 120px;
+  width: 100px;
+  marigin-left: 230px;
+  margin-right: 230px;
 }
