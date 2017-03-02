@@ -201,11 +201,12 @@ function handleSubmit(event){
     else if (score === 6 && health >= 1) {
       roundTwoWinners.unshift(roundOneWinners[0]);
       roundThreeSetup();
-      roundThreeP1P2();
       roundThreeNpcFight();
+      roundThreeP1P2();
     }
     else if (score === 9 && health >= 1) {
       winnerSetup();
+      youWin();
     } else {
       questionRepeats += 1;
       askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
@@ -309,6 +310,10 @@ function roundThreeNpcFight(){
 function gameOver(){
   window.location = 'lose.html';
 };
+
+function youWin(){
+  window.location = 'win.html';
+}
 
 roundOneSetup();
 roundOneNpcFight();
