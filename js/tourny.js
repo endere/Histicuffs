@@ -206,10 +206,13 @@ function handleSubmit(event){
     }
     else if (score === 9 && health >= 1) {
       winnerSetup();
+      alert('YOU HAVE WON!');
+
       youWin();
     } else {
       questionRepeats += 1;
       askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
+
 
     }
   } else {
