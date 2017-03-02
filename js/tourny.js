@@ -211,7 +211,7 @@ function handleSubmit(event){
     if (score === 9 && health >= 1) {
 
       winnerSetup();
-        alert('YOU HAVE WON!');
+      alert('YOU HAVE WON!');
     }
   } else {
     createElement('div', 'class', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
