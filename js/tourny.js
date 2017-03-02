@@ -205,10 +205,11 @@ function handleSubmit(event){
       roundThreeNpcFight();
     }
     else if (score === 9 && health >= 1) {
-      alert('YOU HAVE WON!');
+      winnerSetup();
     } else {
       questionRepeats += 1;
       askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
+
     }
   } else {
     health -= 1;
@@ -235,6 +236,7 @@ function roundOneSetup(){
 function roundTwoSetup(){
   console.log('new round. round 2');
   quizQuestions = [];
+
   for( var i = 0; i < roundOneWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundOneWinners[i].createImage());
@@ -243,6 +245,7 @@ function roundTwoSetup(){
 }
 
 function roundThreeSetup(){
+
   for( var i = 0; i < roundTwoWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundTwoWinners[i].createImage());
@@ -251,11 +254,9 @@ function roundThreeSetup(){
 }
 
 function winnerSetup(){
-  for( var i = 0; i < winner.length; i++){
-    var fieldEl = document.createElement('td');
-    fieldEl.appendChild(winner[i].createImage());
-    tableWinner.appendChild(fieldEl);
-  }
+  var fieldEl = document.createElement('td');
+  fieldEl.appendChild(roundTwoWinners[0].createImage());
+  tableWinner.appendChild(fieldEl);
 }
 
 function roundOneP1P2(){
