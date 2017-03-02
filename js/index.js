@@ -29,4 +29,5 @@ function setUserChoice(event){
     localStorage.playerChoice = JSON.stringify(playerChoice);
     console.log(localStorage.playerChoice);
   }
+  window.location = 'tourny.html';
 }

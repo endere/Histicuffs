@@ -3,16 +3,17 @@ html {
 }
 
 .navbar {
+  display: block;
+  height: 120px;
+  text-align: center;
   background-color: #736664;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  position: fixed;
-  top: 0;
-  width: 100%;
+  margin: auto;
+  border: 2px solid black;
+  border-bottom: none;
 }
 
 body {
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .navLinks {
@@ -20,6 +21,12 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   color: black;
+  padding: 5px;
+}
+
+.navLinks:hover {
+  border: 1px solid black;
+  background-color: #465c5d;
 }
 
 h1 {
@@ -51,6 +58,7 @@ fieldset {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  margin-bottom: 50px;
 
 }
 
@@ -62,6 +70,13 @@ label {
   display: inline;
   margin: auto;
   font-size: 20px;
+  list-style-type: none;
+  font-size: 15px;
+}
+
+li p {
+  width: 600px;
+  color: ##465c5d;
 }
 
 #left-roster {
@@ -75,4 +90,15 @@ label {
 .rosterImgs {
   width: 150px;
   height: 150px;
+  border: 2px solid black;
+}
+
+.roster {
+  padding-top: 20px;
+  background-color: #d39d5e;
+  border: 2px solid black;
+}
+
+strong {
+  font-size: 22px;
 }

@@ -19,6 +19,7 @@ var tableElOne = document.getElementById('roundOne');
 var tableElTwo = document.getElementById('roundTwo');
 var tableElThree = document.getElementById('roundThree');
 var tableWinner = document.getElementById('winner');
+var twoPlayers = document.getElementById('p1p2');
 
 function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId){
   var element = document.createElement(tagType);
@@ -48,7 +49,12 @@ function Character(character){
     this.questions.push(new Question(character[i]));
   }
 }
-
+function setUpGeneralQuestions(generalQuestions){
+  this.questions = [];
+  for (var i = 0; i < generalQuestions.length; i++) {
+    this.questions.push(new Question(generalQuestions[i]));
+  }
+}
 Character.prototype.createImage = function(i) {
   var imageEl = document.createElement('img');
   imageEl.setAttribute('src', this.src);
@@ -69,7 +75,7 @@ function Question(questions){
   this.correct = questions[1];
   this.answers = [questions[1], questions[2], questions[3], questions[4]];
 }
-
+generalQuestions = new setUpGeneralQuestions(generalQuestions);
 generateCharacters();
 
 function setUpMatches(){
@@ -113,7 +119,7 @@ function quiz(fighterA, fighterB){
   quizQuestions = quizQuestionSelect(fighterA, fighterB);
   holder = document.getElementById('form');
   quizLength = quizQuestions.length;
-  console.log(quizQuestions);
+  console.log('these are the questions ' + quizQuestions);
   questionRepeats = 0;
   if (document.getElementById('answerHolder')){
     document.getElementById('answerHolder').parentNode.removeChild(document.getElementById('answerHolder'));
@@ -148,8 +154,6 @@ function askAQuestion(quizQuestions, holder, quizLength, questionRepeats){
       }
     }
     console.log(nextQuestion.correct);
-  } else {
-    alert('YOU HAVE WON!');
   }
 }
 function quizQuestionSelect(fighterA, fighterB) {
@@ -169,6 +173,14 @@ function quizQuestionSelect(fighterA, fighterB) {
       bannedQuestions.push(fighterB.questions[choiceB]);
     }
   }
+  while(quizQuestions.length < 5){
+    var choiceC = Math.floor(Math.random() * (generalQuestions.questions.length));
+    if(quizQuestions.indexOf(generalQuestions.questions[choiceC]) !== -1 || bannedQuestions.indexOf(generalQuestions.questions[choiceC]) !== -1){
+    }else{
+      quizQuestions.push(generalQuestions.questions[choiceC]);
+      bannedQuestions.push(generalQuestions.questions[choiceC]);
+    }
+  }
   return quizQuestions;
 }
 
@@ -179,29 +191,34 @@ function handleSubmit(event){
   event.stopPropagation();
 
   if(event.target.id === 'correct'){
-    createElement('div', 'class', 'result', 'Correct!', document.getElementById('answerHolder'));
+    createElement('div', 'class', 'correct', 'Correct!', document.getElementById('answerHolder'));
     score += 1;
     if (score === 3 && health >= 1) {
       roundOneWinners.unshift(contestents[0]);
       console.log(roundOneWinners);
       roundTwoSetup();
       roundTwoNpcFight();
+      roundTwoP1P2();
 
     }
     if (score === 6 && health >= 1) {
       roundTwoWinners.unshift(roundOneWinners[0]);
       console.log(roundTwoWinners);
+      roundThreeSetup();
       roundThreeNpcFight();
+      roundThreeP1P2();
     }
     if (score === 9 && health >= 1) {
-      alert('YOU HAVE WON!');
+
+      winnerSetup();
+        alert('YOU HAVE WON!');
     }
   } else {
-    createElement('div', 'class', 'result', 'Wrong!', document.getElementById('answerHolder'));
+    createElement('div', 'class', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
     health -= 1;
     console.log('health remaining: ' + health);
     if (health === 0){
-      alert('game over');
+
       gameOver();
     }
   }
@@ -220,22 +237,55 @@ function roundOneSetup(){
 }
 
 function roundTwoSetup(){
+  quizQuestions = [];
+
   for( var i = 0; i < roundOneWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundOneWinners[i].createImage());
-    tableElOne.appendChild(fieldEl);
+    tableElTwo.appendChild(fieldEl);
   }
-
 }
 
 function roundThreeSetup(){
+
+  quizQuestions = [];
   for( var i = 0; i < roundTwoWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundTwoWinners[i].createImage());
-    tableElOne.appendChild(fieldEl);
+    tableElThree.appendChild(fieldEl);
   }
-  contestents[0].isPlayer = true;
-  return contestents;
+}
+
+function winnerSetup(){
+  var fieldEl = document.createElement('td');
+  fieldEl.appendChild(roundTwoWinners[0].createImage());
+  tableWinner.appendChild(fieldEl);
+}
+
+function roundOneP1P2(){
+  for( var i = 0; i < 2; i++){
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(contestents[i].createImage());
+    twoPlayers.appendChild(fieldEl);
+  }
+}
+
+function roundTwoP1P2(){
+  twoPlayers.innerHTML = '';
+  for (var i = 0; i < 2; i++) {
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(roundOneWinners[i].createImage());
+    twoPlayers.appendChild(fieldEl);
+  }
+}
+
+function roundThreeP1P2(){
+  twoPlayers.innerHTML = '';
+  for (var i = 0; i < 2; i++) {
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(roundTwoWinners[i].createImage());
+    twoPlayers.appendChild(fieldEl);
+  }
 }
 
 function roundOneNpcFight(){
@@ -247,13 +297,23 @@ function roundOneNpcFight(){
 }
 
 function roundTwoNpcFight(){
+  health = 3;
   quiz(roundOneWinners[0], roundOneWinners[1]);
   roundTwoWinners.push(npcFight(roundOneWinners[2], roundOneWinners[3]));
 }
 
 function roundThreeNpcFight(){
+  health = 3;
   quiz(roundTwoWinners[0], roundTwoWinners[1]);
 }
+function gameOver(){
+  window.location = 'lose.html';
+};
+
+function gameOver(){
+  window.location = 'lose.html';
+};
 
 roundOneSetup();
 roundOneNpcFight();
+roundOneP1P2();
