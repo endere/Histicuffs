@@ -176,6 +176,7 @@ div.correct{
   margin-left: 100px;
 }
 
+
 div.wrong{
   display: inline;
   text-align: center;
@@ -184,6 +185,7 @@ div.wrong{
   height: 35px;
   width: 150px;
   margin-left: 100px;
+
 }
 
 #roundOne img{
