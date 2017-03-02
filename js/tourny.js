@@ -209,7 +209,9 @@ function handleSubmit(event){
       roundThreeP1P2();
     }
     if (score === 9 && health >= 1) {
-      alert('YOU HAVE WON!');
+
+      winnerSetup();
+        alert('YOU HAVE WON!');
     }
   } else {
     createElement('div', 'class', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
@@ -236,7 +238,7 @@ function roundOneSetup(){
 
 function roundTwoSetup(){
   quizQuestions = [];
-  health = 3;
+
   for( var i = 0; i < roundOneWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundOneWinners[i].createImage());
@@ -245,7 +247,7 @@ function roundTwoSetup(){
 }
 
 function roundThreeSetup(){
-  health = 3;
+
   quizQuestions = [];
   for( var i = 0; i < roundTwoWinners.length; i++){
     var fieldEl = document.createElement('td');
@@ -255,11 +257,9 @@ function roundThreeSetup(){
 }
 
 function winnerSetup(){
-  for( var i = 0; i < winner.length; i++){
-    var fieldEl = document.createElement('td');
-    fieldEl.appendChild(winner[i].createImage());
-    tableWinner.appendChild(fieldEl);
-  }
+  var fieldEl = document.createElement('td');
+  fieldEl.appendChild(roundTwoWinners[0].createImage());
+  tableWinner.appendChild(fieldEl);
 }
 
 function roundOneP1P2(){
