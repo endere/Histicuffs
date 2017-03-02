@@ -119,8 +119,6 @@ function quiz(fighterA, fighterB){
   quizQuestions = quizQuestionSelect(fighterA, fighterB);
   holder = document.getElementById('form');
   quizLength = quizQuestions.length;
-  console.log('these are the questions ' + quizQuestions);
-  questionRepeats = 0;
   if (document.getElementById('answerHolder')){
     document.getElementById('answerHolder').parentNode.removeChild(document.getElementById('answerHolder'));
   }
@@ -129,21 +127,21 @@ function quiz(fighterA, fighterB){
 }
 
 function askAQuestion(quizQuestions, holder, quizLength, questionRepeats){
+  console.log(questionRepeats);
   if (questionRepeats < quizLength){
     if (document.getElementById('fieldSet')){
       document.getElementById('fieldSet').parentNode.removeChild(document.getElementById('fieldSet'));
     }
+    for (var i = 0; i < quizQuestions.length; i++) {
+      console.log(quizQuestions[i].ask);
+    }
     createElement('fieldset', 'id', 'fieldSet', '', holder);
     var nextQuestion = quizQuestions.shift(0);
+    console.log(nextQuestion.correct);
     createElement('legend', 'id', 'ask', nextQuestion.ask, document.getElementById('fieldSet'));
     var answersLength = nextQuestion.answers.length;
-    console.log(nextQuestion.ask);
-    console.log('proceeding into loop...');
-    console.log(nextQuestion.answers[0]);
-    console.log(nextQuestion.answers[1]);
-    console.log(nextQuestion.answers[2]);
-    console.log(nextQuestion.answers[3]);
     for (var j = 0; j < answersLength; j++) {
+      console.log('test');
       var number = Math.floor(Math.random() * (answersLength - j));
       var nextAnswer = nextQuestion.answers.splice(number, 1);
       createElement('div', 'id', 'answer' + j, nextAnswer, document.getElementById('fieldSet'));
@@ -153,7 +151,6 @@ function askAQuestion(quizQuestions, holder, quizLength, questionRepeats){
         document.getElementById('answer' + j).setAttribute('id','correct');
       }
     }
-    console.log(nextQuestion.correct);
   }
 }
 function quizQuestionSelect(fighterA, fighterB) {
@@ -163,6 +160,7 @@ function quizQuestionSelect(fighterA, fighterB) {
     }else{
       quizQuestions.push(fighterA.questions[choiceA]);
       bannedQuestions.push(fighterA.questions[choiceA]);
+      console.log(fighterA.questions[choiceA].ask);
     }
   }
   while(quizQuestions.length < 4){
@@ -195,38 +193,37 @@ function handleSubmit(event){
     score += 1;
     if (score === 3 && health >= 1) {
       roundOneWinners.unshift(contestents[0]);
-      console.log(roundOneWinners);
       roundTwoSetup();
       roundTwoNpcFight();
       roundTwoP1P2();
 
     }
-    if (score === 6 && health >= 1) {
+    else if (score === 6 && health >= 1) {
       roundTwoWinners.unshift(roundOneWinners[0]);
-      console.log(roundTwoWinners);
       roundThreeSetup();
-      roundThreeNpcFight();
       roundThreeP1P2();
+      roundThreeNpcFight();
     }
-    if (score === 9 && health >= 1) {
-
+    else if (score === 9 && health >= 1) {
       winnerSetup();
-        alert('YOU HAVE WON!');
+    } else {
+      questionRepeats += 1;
+      askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
+
     }
   } else {
-    createElement('div', 'class', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
     health -= 1;
-    console.log('health remaining: ' + health);
+    createElement('div', 'class', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
     if (health === 0){
-
       gameOver();
     }
+    questionRepeats += 1;
+    askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
   }
-  questionRepeats += 1;
-  askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
 };
 
 function roundOneSetup(){
+  console.log('new round. round 1');
   for( var i = 0; i < contestents.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(contestents[i].createImage());
@@ -237,6 +234,7 @@ function roundOneSetup(){
 }
 
 function roundTwoSetup(){
+  console.log('new round. round 2');
   quizQuestions = [];
 
   for( var i = 0; i < roundOneWinners.length; i++){
@@ -248,7 +246,6 @@ function roundTwoSetup(){
 
 function roundThreeSetup(){
 
-  quizQuestions = [];
   for( var i = 0; i < roundTwoWinners.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(roundTwoWinners[i].createImage());
@@ -289,7 +286,6 @@ function roundThreeP1P2(){
 }
 
 function roundOneNpcFight(){
-  console.log(contestents);
   quiz(contestents[0], contestents[1]);
   roundOneWinners.push(npcFight(contestents[2], contestents[3]));
   roundOneWinners.push(npcFight(contestents[4], contestents[5]));
@@ -298,18 +294,18 @@ function roundOneNpcFight(){
 
 function roundTwoNpcFight(){
   health = 3;
+  questionRepeats = 0;
+  quizQuestions = [];
   quiz(roundOneWinners[0], roundOneWinners[1]);
   roundTwoWinners.push(npcFight(roundOneWinners[2], roundOneWinners[3]));
 }
 
 function roundThreeNpcFight(){
   health = 3;
+  questionRepeats = 0;
+  quizQuestions = [];
   quiz(roundTwoWinners[0], roundTwoWinners[1]);
 }
-function gameOver(){
-  window.location = 'lose.html';
-};
-
 function gameOver(){
   window.location = 'lose.html';
 };
