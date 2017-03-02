@@ -228,10 +228,10 @@ function roundTwoSetup(){
 
 }
 
-function roundOneSetup(){
-  for( var i = 0; i < contestents.length; i++){
+function roundThreeSetup(){
+  for( var i = 0; i < roundTwoWinners.length; i++){
     var fieldEl = document.createElement('td');
-    fieldEl.appendChild(contestents[i].createImage());
+    fieldEl.appendChild(roundTwoWinners[i].createImage());
     tableElOne.appendChild(fieldEl);
   }
   contestents[0].isPlayer = true;
