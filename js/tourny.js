@@ -12,6 +12,9 @@ var remaining = []; //Currently not in use, DELETE IF NOT NEEDED BY THURS
 var roundCounter = 0;
 var score = 0;
 var contestents = [];
+var roundOneWinners = [];
+var roundTwoWinners = [];
+var winner = [];
 var tableElOne = document.getElementById('roundOne');
 var tableElTwo = document.getElementById('roundTwo');
 var tableElThree = document.getElementById('roundThree');
@@ -190,7 +193,7 @@ function handleSubmit(event){
   askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
 };
 
-function roundOne(){
+function roundOneSetup(){
   for( var i = 0; i < contestents.length; i++){
     var fieldEl = document.createElement('td');
     fieldEl.appendChild(contestents[i].createImage());
@@ -200,4 +203,12 @@ function roundOne(){
   return contestents;
 }
 
-roundOne();
+function roundOneNpcFight(){
+  roundOneWinners.push(quiz(contestents[0], contestents[1]));
+  roundOneWinners.push(npcFight(contestents[2], contestents[3]));
+  roundOneWinners.push(npcFight(contestents[4], contestents[5]));
+  roundOneWinners.push(npcFight(contestents[6], contestents[7]));
+}
+
+roundOneSetup();
+roundOneNpcFight();
