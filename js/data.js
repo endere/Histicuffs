@@ -375,7 +375,6 @@ var harrietQ12 = ['What city did Harriet Tubman escape to?', 'Philadelphia', 'Bo
 var harrietTubman = ['Harriet Tubman', 'img/harriet.jpg', harrietQ1, harrietQ2, harrietQ3, harrietQ4, harrietQ5, harrietQ6, harrietQ7, harrietQ8, harrietQ9, harrietQ10, harrietQ11, harrietQ12];
 //
 //
-var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
 
 var bgImages = ['aztec.jpg', 'giza.jpg', 'mustang.jpg', 'rushmore.jpg'];
 
@@ -404,3 +403,5 @@ var generalQ11 = ['Which of these locations did Bill and Ted not visit?', 'Cairo
 var generalQ12 = ['Who was the first to write about Atlantis?', 'Plato', 'Aristotle', 'Socrates', 'Homer'];
 
 var generalQuestions = [generalQ1, generalQ2, generalQ3, generalQ4, generalQ5, generalQ6, generalQ7, generalQ8, generalQ9, generalQ10, generalQ11, generalQ12];
+
+var characters = [teddy, daVinci, ghandi, darwin, voltaire, joanOfArc, maoZedong, edgarAllanPoe, marieCurie, hannibal, cleopatra, harrietTubman];
