@@ -1,6 +1,6 @@
 body{
-  /*background-image: url("../img/bgimages/aztec.jpg");
-background-size: cover;*/
+  background-image: url("../img/bgimages/aztec.jpg");
+background-size: cover;
 }
 
 .titlebar{
@@ -41,6 +41,7 @@ header {
   text-align: center;
   margin-left:13%;
   margin-right: auto;
+  position: absolute;
 
 }
 
@@ -53,8 +54,8 @@ header {
   display: block;
   text-align: center;
   position:absolute;
-  top: 650px;
-  left: 280px;
+  top: 550px;
+  left: 100px;
 
 }
 
@@ -111,6 +112,11 @@ header {
 
 }
 
+#fieldset{
+  position:absolute;
+  top: 1500px;
+}
+
 .p1p2{
   background-color: yellow;
   margin-bottom: 200px;
@@ -132,7 +138,7 @@ header {
   margin: 5px;
 }
 
-img{
+#roundOne img{
   border: solid;
   height: 90px;
   width: 75px;
