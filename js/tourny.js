@@ -19,6 +19,7 @@ var tableElOne = document.getElementById('roundOne');
 var tableElTwo = document.getElementById('roundTwo');
 var tableElThree = document.getElementById('roundThree');
 var tableWinner = document.getElementById('winner');
+var twoPlayers = document.getElementById('p1p2');
 
 function createElement(tagType, tagIdentifier, tagIdentifiername, elementContent, sectionId){
   var element = document.createElement(tagType);
@@ -197,12 +198,15 @@ function handleSubmit(event){
       console.log(roundOneWinners);
       roundTwoSetup();
       roundTwoNpcFight();
+      roundTwoP1P2();
 
     }
     if (score === 6 && health >= 1) {
       roundTwoWinners.unshift(roundOneWinners[0]);
       console.log(roundTwoWinners);
+      roundThreeSetup();
       roundThreeNpcFight();
+      roundThreeP1P2();
     }
     if (score === 9 && health >= 1) {
       alert('YOU HAVE WON!');
@@ -212,6 +216,7 @@ function handleSubmit(event){
     health -= 1;
     console.log('health remaining: ' + health);
     if (health === 0){
+
       gameOver();
     }
   }
@@ -249,6 +254,40 @@ function roundThreeSetup(){
   }
 }
 
+function winnerSetup(){
+  for( var i = 0; i < winner.length; i++){
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(winner[i].createImage());
+    tableWinner.appendChild(fieldEl);
+  }
+}
+
+function roundOneP1P2(){
+  for( var i = 0; i < 2; i++){
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(contestents[i].createImage());
+    twoPlayers.appendChild(fieldEl);
+  }
+}
+
+function roundTwoP1P2(){
+  twoPlayers.innerHTML = '';
+  for (var i = 0; i < 2; i++) {
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(roundOneWinners[i].createImage());
+    twoPlayers.appendChild(fieldEl);
+  }
+}
+
+function roundThreeP1P2(){
+  twoPlayers.innerHTML = '';
+  for (var i = 0; i < 2; i++) {
+    var fieldEl = document.createElement('td');
+    fieldEl.appendChild(roundTwoWinners[i].createImage());
+    twoPlayers.appendChild(fieldEl);
+  }
+}
+
 function roundOneNpcFight(){
   console.log(contestents);
   quiz(contestents[0], contestents[1]);
@@ -258,16 +297,23 @@ function roundOneNpcFight(){
 }
 
 function roundTwoNpcFight(){
+  health = 3;
   quiz(roundOneWinners[0], roundOneWinners[1]);
   roundTwoWinners.push(npcFight(roundOneWinners[2], roundOneWinners[3]));
 }
 
 function roundThreeNpcFight(){
+  health = 3;
   quiz(roundTwoWinners[0], roundTwoWinners[1]);
 }
 function gameOver(){
   window.location = 'lose.html';
 };
 
+function gameOver(){
+  window.location = 'lose.html';
+};
+
 roundOneSetup();
 roundOneNpcFight();
+roundOneP1P2();
