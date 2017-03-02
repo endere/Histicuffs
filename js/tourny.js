@@ -210,5 +210,14 @@ function roundOneNpcFight(){
   roundOneWinners.push(npcFight(contestents[6], contestents[7]));
 }
 
+function roundTwoNpcFight(){
+  roundTwoWinners.push(quiz(contestents[0], contestents[1]));
+  roundTwoWinners.push(npcFight(contestents[2], contestents[3]));
+}
+
+function roundThreeNpcFight(){
+  winners.push(quiz(contestents[0], contestents[1]));
+}
+
 roundOneSetup();
 roundOneNpcFight();
