@@ -3,7 +3,11 @@ img{
   margin: auto;
 max-width: 350px;
 max-height: 350px;
+border: solid;
+border-width: thick;
+border-color: gold;
 }
+
 p{
   text-align: center;
   font-size: 30px;

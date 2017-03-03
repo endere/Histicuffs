@@ -16,5 +16,5 @@ photoHolder.appendChild(photo);
 
 var text = document.getElementById('text');
 var winMessage = document.createElement('p');
-winMessage.textContent = 'Congratulations ' + user + ' you have won using ';
+winMessage.textContent = 'Congratulations ' + user + ' you have won using: ';
 text.appendChild(winMessage);

@@ -1,5 +1,6 @@
 html{
   background-color: grey;
+  
 }
 
 
@@ -14,8 +15,14 @@ p{
   font-size: 30px;
 }
 a{
-  background-color: blue;
+  background-color: ;
 }
 .links{
+  width: 300px;
+  border: solid;
+  border-color: black
   background-color: #736664;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
 }
