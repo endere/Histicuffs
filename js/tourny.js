@@ -189,13 +189,19 @@ function handleSubmit(event){
   event.stopPropagation();
 
   if(event.target.id === 'correct'){
-    createElement('div', 'class', 'correct', 'Correct!', document.getElementById('answerHolder'));
+    if (document.getElementById('right')){
+      document.getElementById('right').parentNode.removeChild(document.getElementById('right'));
+    } else if (document.getElementById('wrong')){
+      document.getElementById('wrong').parentNode.removeChild(document.getElementById('wrong'));
+    }
+    createElement('div', 'id', 'right', 'Correct!', document.getElementById('answerHolder'));
     score += 1;
     if (score === 3 && health >= 1) {
       roundOneWinners.unshift(contestents[0]);
       roundTwoSetup();
       roundTwoNpcFight();
       roundTwoP1P2();
+      alert('You have beaten Round One!  Next up is ' + roundOneWinners[0].name + ' VS ' + roundOneWinners[1].name + '.');
 
     }
     else if (score === 6 && health >= 1) {
@@ -203,6 +209,7 @@ function handleSubmit(event){
       roundThreeSetup();
       roundThreeNpcFight();
       roundThreeP1P2();
+      alert('You have beaten Round Two!  Next up is ' + roundTwoWinners[0].name + ' VS ' + roundTwoWinners[1].name + '.');
     }
     else if (score === 9 && health >= 1) {
       winnerSetup();
@@ -213,11 +220,15 @@ function handleSubmit(event){
       questionRepeats += 1;
       askAQuestion(quizQuestions,holder,quizLength,questionRepeats);
 
-
     }
   } else {
+    if (document.getElementById('right')){
+      document.getElementById('right').parentNode.removeChild(document.getElementById('right'));
+    } else if (document.getElementById('wrong')){
+      document.getElementById('wrong').parentNode.removeChild(document.getElementById('wrong'));
+    }
     health -= 1;
-    createElement('div', 'class', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
+    createElement('div', 'id', 'wrong', 'Wrong!' + ' You have ' + health + ' Tries remaining!', document.getElementById('answerHolder'));
     if (health === 0){
       gameOver();
     }
